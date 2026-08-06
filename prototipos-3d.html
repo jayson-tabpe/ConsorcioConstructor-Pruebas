@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prototipos 3D | Consorcio Constructor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d9dadb",
+                    "inverse-primary": "#a3caf6",
+                    "outline": "#73777f",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-variant": "#e1e3e4",
+                    "on-secondary-fixed-variant": "#93000c",
+                    "on-tertiary-fixed": "#271900",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e1e3e4",
+                    "tertiary-fixed": "#ffdeaa",
+                    "surface-container-low": "#f3f4f5",
+                    "primary-fixed": "#d0e4ff",
+                    "on-primary-fixed": "#001d35",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#410002",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#3a6188",
+                    "tertiary-fixed-dim": "#ffba2c",
+                    "secondary-container": "#df2b2a",
+                    "secondary": "#ba0514",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#312000",
+                    "surface-bright": "#f8f9fa",
+                    "on-background": "#191c1d",
+                    "background": "#f8f9fa",
+                    "outline-variant": "#c2c7cf",
+                    "on-surface": "#191c1d",
+                    "secondary-fixed": "#ffdad6",
+                    "primary": "#002541",
+                    "on-primary-container": "#7fa6d0",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#a3caf6",
+                    "on-tertiary-container": "#d49700",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#4d3400",
+                    "on-tertiary-fixed-variant": "#5f4100",
+                    "secondary-fixed-dim": "#ffb4ab",
+                    "surface": "#f8f9fa",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#fffbff",
+                    "primary-container": "#0b3b60",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#42474e",
+                    "on-primary-fixed-variant": "#1f496f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "section-gap": "80px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .card-glow:hover {
+            box-shadow: 0 0 25px rgba(11, 59, 96, 0.15);
+            transform: scale(1.02);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .img-zoom {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-glow:hover .img-zoom {
+            transform: scale(1.1);
+        }
+
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(45deg);
+            transition: all 0.6s;
+            opacity: 0;
+        }
+
+        .card-glow:hover .shine-effect::after {
+            opacity: 1;
+            left: 100%;
+            top: 100%;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-surface/80 dark:bg-on-surface/80 backdrop-blur-md text-primary dark:text-primary-fixed docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">
+                Consorcio Constructor
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="index.html">Inicio</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="nosotros.html">Nosotros</a>
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-label-bold text-label-bold" href="prototipos-3d.html">Prototipos 3D</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="requisitos.html">Requisitos</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="contacto.html">Contacto</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-bold text-label-bold hover:scale-105 hover:shadow-primary/20 transition-all duration-300" onclick="location.href='requisitos.html'">
+                    Postula a Techo Propio
+                </button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section for Prototipos -->
+<section class="relative pt-20 pb-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center relative z-10">
+<div class="space-y-6">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-label-sm font-label-bold uppercase tracking-wider">Visualización Avanzada</span>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">
+                        Explora tu futuro hogar en <span class="text-secondary">3D</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                        Diseños arquitectónicos optimizados para el programa Techo Propio. Espacios inteligentes, funcionales y construidos con la excelencia de la ingeniería peruana.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span>Aprobado por Fondo Mivivienda</span>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-secondary">eco</span>
+<span>Materiales Sostenibles</span>
+</div>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="bg-white p-4 rounded-xl shadow-xl rotate-3 card-glow">
+<img alt="Prototipo Principal" class="rounded-lg w-full aspect-[1.41] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo83txfYugPb1KiyIrP-WLtYVOfzTFalzC8JWqeUOBWUv51KDcSYLLoKQ0mo23rczp5-IARoP-VYIWNoZBEZypKON_ZP-mI8WVF6k6p2YzfV4wq-KITYk5W_WEL9DB1jutqPfnoa1jgd9RKtJcDSJGxG8AV6lO8eRBoukqHiZC4mKYWIJfxNb8QCSLsDqhfvjxFQZG0FHd6IPEqPDeKidwoMWQ2BnVTKn9dRuG31830Tj_khwXQ1-AZD6u-uVK6MV3JA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Gallery Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Galería de Modelos</h2>
+<p class="text-on-surface-variant font-body-md">Selecciona un modelo para ver detalles de distribución y área total.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-outline rounded-lg hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-primary-container hover:text-white transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo A1" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QnZmuy7Wg9rqyVqzKonfwQ-UuNdnszvh1XYNHds_BO1AgU0s6U69yRsIc2plHZkV0lBP0MpSzufk3z3wfCHyZ6qxX0H5FFu0Ox0BCt_vQ7rEIBsBcnENyPjmeASnpEj-7rqS9aUk16tT7oFWv2SVVXf9wgw71cgs61Ag-fhOAYF7P9R_FTN7wr6j8tEyUi9X07odUXNhHM6NHHSZqrF1ZK-rKNLnntbRAw_0fs1i00yWroADlsHm5W2SFJHCVt0kqw"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Modelo Tradicional Plus</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1 rounded text-[10px] font-bold uppercase">Popular</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2">Distribución optimizada con sala-comedor ampliada y ventilación natural cruzada.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">45.00 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">bed</span>
+<span class="text-sm font-semibold">2 Dormitorios</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo B2" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoUXLa1Lq2mpa-SiDoqlnlwN1sKdtnEyQ1OyCaT7YO355zhBe1Q3lXg75HlCafx2F3vqZzxHnJxQrNNxTaJn_25Jl1H5Y4aFx1Kd6xGcyJPs9DmIg9RE0GF2VPlGaMqzT464TqfL8huvzLgAYUVcnAR6XBPM4gVakIWhVURCfGpA8Cl2r6EDI9btIf5bZXA9e45lW6XNh4bBrOnN5A66W17nhQ8fBAPmIXKd-KtQ2ugLWE_eNTd-71Dln5EDmazuOxpg"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Vivienda Bioclimática</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Fachada diseñada para el confort térmico en climas cálidos, reduciendo el consumo energético.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">42.50 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">bathroom</span>
+<span class="text-sm font-semibold">1 Baño Completo</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo C3" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tTs1vJIVxZfJoZ9ZPgyyJR6nfBY8cJtfu1D9ZxZ1acadgqAh48IOv15TOVkM4k2gxqljvp2VN2axfi0DY0w3x0eq3hGF69rRhBQOVSdn1F3ZdAR3RQfwzS3yjfCPqqTYZYvdiVN98u1yVfEeGOb3bs-lKCK912RoO3xR-yy-2rGfWoyyrcTcFIW8g-sqk_--LqtV-nQmzui-5Smb1liJOH9628NsX6oXRq_wAEBEoU6MvtcaHqYjEJQhN8sy_gVg2w"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Compacto Funcional</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Ideal para familias jóvenes, maximizando cada metro cuadrado sin sacrificar estética.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">38.20 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">chair</span>
+<span class="text-sm font-semibold">Área Social</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo D4" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkJUTs0WZdUR5o1H_iea73zlo7qxkyqXO_l6gFZxOeIvFaPKs63PCnMTjT0DWV1puaRxIw8xRxrz_za4i6qSXQ52-avNdQLUOMFvGOInfSBgd5XaoX0BJfxkSzSARXXrh7_8sJv9wkgZPtKFk3fYyy836vcTxvtmEvhSZG0lzbfgETGL8hYXpuYMPanx4LbEImhh6y3a5n1_W0JdXPftZvha7IBZhXykA-N8cmh20tFLBoTGyThKMj0qbtiLCwrSvIBQ"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Hogar Familiar Prime</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Incluye lavandería techada y posibilidad de ampliación a segundo nivel.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">50.15 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">layers</span>
+<span class="text-sm font-semibold">Proy. 2do Piso</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo E5" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdqxoNwbZAZH9mQTXRlB8tbkDvYrSbA5jO7hy3WQ_FYN7v3ry2e0dVYczUMbiAXPO1IU0k1fJ-RfsFwgFLwdcgyETLz8-wtKrRhk4-xTUXZwRpZtfMN_ucBx5LurLSHxPtcF3Xq93J5Hj3YWlrdgCfS25LsJBrBFbV6GgAEeoAnYa0v_M78asXc5DPK8OYc3g3UyyaTS5k-QiXWgLU4hrgcBXk8FtojyFM7eoyVd_XrW5u4F_vW5KIOor9RaTm3F5Mzw"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Diseño Contemporáneo</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Líneas modernas y grandes ventanales para una iluminación excepcional.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">44.80 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">kitchen</span>
+<span class="text-sm font-semibold">Cocina Kitchenette</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo F6" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP9eEukoLYFMnT7S4ULdoF6-U0kwMoxz8K702oFO4033mvoCi5hBq3DfDJXkQPOYAUGn2_2DSYmakJxpqbFyucDhXE9djO_SNTqIZ5SbFVAJ2ugLLQCqce0VHkGzXJ97M-ZXqp3UUxSrNQhKlb4q0iD9zWNy5GdnFLfLIfnd6OdiuZWDWQeWdC91_vR0vQ6Q1bL9LcLNXaguJ2vGaAMFo3MAjaIFsWh9TKkCcsyD1buQcWq71Tvdl4yQaqfFA0avZrxg"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Módulo Básico Evolutivo</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">La mejor opción costo-beneficio para acceder rápidamente a tu primera vivienda.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">35.50 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">construction</span>
+<span class="text-sm font-semibold">Construcción Rápida</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo G7" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClFpBB4A4kiMvzmemtyYZ61bsUcrsJe61SoRJVKfleyG8L__5h-EwQEPoiZPpm7zD6GeBAUS5nWmGcZZl22FpnVpgOKcZ-ulzbd3OcaHFGRTCUBbrdYrKXI2C61uJw-ZvkaGFKfu2jAJDroLSaz3KvDfnuV37MwrXFWKbyDoQsBE_pyneibuuYnIrvHmodUYSpgECgB7Jw1qCam8yvMgLHtIiTOnoOcu440JzbfRY2jbLhW9iXWKV-rdTkHRm84m_AAw"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Suite Urbana</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Ideal para solteros o parejas, con una distribución tipo loft muy moderna.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">41.20 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">countertops</span>
+<span class="text-sm font-semibold">Acabados A1</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo H8" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6CgnzYM5glB1mLzfm_k019zP0kqGxDxUddTTKtGp7eWF9JUv6a-tVmU3mgzfjATbioiWlgc72kWosyYsdGXmQ0Ickq1vDc_ovkK2KfNiqQ_jolGkwNiz9CMdEkszgqFqrNhwykx7tMwNMEER3M-MmVx4zJxcjGJXo5P6rY27Uk2-gyT1OnPNm4CJRVbO90L9dkQ3QtHnCcvYOBXMc49yzieA2uqU9r31mb33E6x6bamTT8746xrkdSkxavNbmTt6W-g"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Modelo Familiar XL</h3>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-2 py-1 rounded text-[10px] font-bold uppercase">Más Amplio</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2">Máxima capacidad para familias de hasta 5 integrantes con ambientes bien definidos.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">54.30 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">group</span>
+<span class="text-sm font-semibold">3 Dormitorios</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specification Info -->
+<section class="bg-primary text-on-primary py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 400 L400 0 L400 400 Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Estándares de Construcción</h2>
+<p class="text-on-primary-container max-w-2xl mx-auto font-body-md opacity-90">Utilizamos materiales certificados y procesos de ingeniería que garantizan la longevidad y seguridad de su inversión.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 text-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary-fixed-dim">rebase_edit</span>
+<h4 class="font-label-bold text-label-bold mb-2 uppercase">Estructura Sismo-resistente</h4>
+<p class="text-sm opacity-80">Diseño basado en la norma técnica peruana E.030.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 text-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary-fixed-dim">water_drop</span>
+<h4 class="font-label-bold text-label-bold mb-2 uppercase">Instalaciones Modernas</h4>
+<p class="text-sm opacity-80">Sistemas de agua y desagüe con materiales de alta densidad.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 text-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary-fixed-dim">bolt</span>
+<h4 class="font-label-bold text-label-bold mb-2 uppercase">Electricidad Certificada</h4>
+<p class="text-sm opacity-80">Circuitos independientes y tableros con protección térmica.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 text-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary-fixed-dim">palette</span>
+<h4 class="font-label-bold text-label-bold mb-2 uppercase">Acabados de Calidad</h4>
+<p class="text-sm opacity-80">Pintura de alto tráfico y cerámicos de primera selección.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<div class="bg-surface-container-high rounded-3xl p-8 md:p-16 border border-outline-variant/30 relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">¿Listo para dar el siguiente paso?</h2>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Nuestros asesores te ayudarán a elegir el prototipo que mejor se adapte a tus necesidades y te guiarán en el proceso de postulación al bono de Techo Propio.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all shadow-lg hover:shadow-secondary/20" href="contacto.html">Solicitar Información</a>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all shadow-lg hover:shadow-primary/20">Descargar Catálogo</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary text-on-primary dark:text-on-tertiary full-width pt-section-gap pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-headline-md font-headline-md text-on-primary mb-4">Consorcio Constructor</div>
+<p class="text-surface-variant/80 text-sm mb-6">Construyendo los sueños de las familias peruanas con integridad, calidad y compromiso social.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">location_on</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-secondary-fixed-dim">Enlaces Rápidos</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="index.html">Inicio</a></li>
+<li><a class="text-secondary-fixed font-bold font-label-sm text-label-sm" href="prototipos-3d.html">Prototipos 3D</a></li>
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="requisitos.html">Requisitos</a></li>
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="contacto.html">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-secondary-fixed-dim">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#">Privacidad</a></li>
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#">Términos</a></li>
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#">Preguntas Frecuentes</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-secondary-fixed-dim">Contacto</h4>
+<div class="space-y-4 text-surface-variant/80 text-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim">call</span>
+<span>(01) 445-8900</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim">mail</span>
+<span>ventas@consorcioconstructor.pe</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim">pin_drop</span>
+<span>Av. Principal 123, San Isidro, Lima</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 mt-16 pt-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-surface-variant/60">© 2024 Consorcio Constructor. Todos los derechos reservados.</p>
+<div class="flex gap-4">
+<img alt="Peru Flag" class="w-6 h-4 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnibzUY7Vdh-usjBBzP4Ap9vOEMuNdvdZxohmItWv_74sAqDbhYbRl124ni27wKhhC_1WH6LvMkhV9WtvMbAyVHAQM8R87_Bn0i_WmMUzQRm3liljdvej_bgvgZe6SIhikgHyxJ9HdaE3PlW6EhQyPwI_W3ZGLQj6tcqzq1qJSHjqnKR3Hd_YpMxF3n2HyfPsQems57rmr2nUHUbV16cq02bgEilwn-2dzOew7MhMK_AUWvkB-vsxa"/>
+<span class="font-label-sm text-label-sm text-surface-variant/60">Hecho en Perú</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and subtle glow tracking
+        document.querySelectorAll('.card-glow').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Optional: Update a CSS variable for a dynamic spotlight effect
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Sticky header transition
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

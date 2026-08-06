@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Consorcio Constructor | Construyendo Sueños</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-surface": "#191c1d",
+                "secondary-container": "#df2b2a",
+                "error": "#ba1a1a",
+                "on-primary-fixed": "#001d35",
+                "surface-container": "#edeeef",
+                "surface-container-highest": "#e1e3e4",
+                "primary-fixed": "#d0e4ff",
+                "surface-bright": "#f8f9fa",
+                "on-tertiary": "#ffffff",
+                "surface-container-high": "#e7e8e9",
+                "on-error-container": "#93000a",
+                "error-container": "#ffdad6",
+                "on-background": "#191c1d",
+                "primary-container": "#0b3b60",
+                "inverse-primary": "#a3caf6",
+                "primary": "#002541",
+                "secondary": "#ba0514",
+                "tertiary-fixed-dim": "#ffba2c",
+                "on-secondary": "#ffffff",
+                "on-secondary-container": "#fffbff",
+                "surface-container-low": "#f3f4f5",
+                "inverse-on-surface": "#f0f1f2",
+                "on-secondary-fixed": "#410002",
+                "outline": "#73777f",
+                "outline-variant": "#c2c7cf",
+                "secondary-fixed": "#ffdad6",
+                "tertiary": "#312000",
+                "tertiary-container": "#4d3400",
+                "on-tertiary-fixed-variant": "#5f4100",
+                "on-error": "#ffffff",
+                "background": "#f8f9fa",
+                "primary-fixed-dim": "#a3caf6",
+                "surface-dim": "#d9dadb",
+                "tertiary-fixed": "#ffdeaa",
+                "on-secondary-fixed-variant": "#93000c",
+                "inverse-surface": "#2e3132",
+                "surface": "#f8f9fa",
+                "surface-variant": "#e1e3e4",
+                "on-primary-container": "#7fa6d0",
+                "on-surface-variant": "#42474e",
+                "on-primary": "#ffffff",
+                "surface-tint": "#3a6188",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#d49700",
+                "secondary-fixed-dim": "#ffb4ab",
+                "on-primary-fixed-variant": "#1f496f",
+                "on-tertiary-fixed": "#271900"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "base": "8px",
+                "margin-desktop": "64px",
+                "section-gap": "80px",
+                "gutter": "24px",
+                "container-max": "1280px",
+                "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-xl": ["Montserrat"],
+                "headline-lg-mobile": ["Montserrat"],
+                "headline-md": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "label-sm": ["Inter"],
+                "label-bold": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .blue-glow:hover {
+            box-shadow: 0 10px 30px -5px rgba(11, 59, 96, 0.35);
+        }
+        .neon-glow-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 37, 65, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="flex items-center gap-2 group" href="index.html">
+<img alt="Consorcio Constructor Logo" class="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMzoaH98Ol1Ce8690_Qghj3J0skHHYj0v3j2_weflqtZyB7bXGMNnGT2OZSH3KnTQMR4AT6ysvwL5Kke9a8BZcIGPAULMRl7UsH9yAyYxH7ImkyI8CAxa4S22py4Au5JnQ1NdeEd874jbADdWpYmHD5BlH3-z-EVMvgiiNTBSd9Ju27M9sqdz5Jlcu_-r7xHnuzRQV5xS_zL7sOdgEIEwpFgP-DU2Okot9cDdJYpN_ng-9NBBgIlq1J2QPGPW6baT5Tw"/>
+<span class="hidden lg:block text-headline-md font-headline-md font-bold text-primary">Consorcio Constructor</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-label-bold text-label-bold" href="index.html">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="nosotros.html">Nosotros</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="prototipos-3d.html">Prototipos 3D</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="requisitos.html">Requisitos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="contacto.html">Contacto</a>
+</nav>
+<a class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-bold text-label-bold hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 transition-all duration-300 active:scale-95" href="requisitos.html">
+                Postula a Techo Propio
+            </a>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden" id="inicio">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9eBF9y0l_w1ogjU9jb_LGgR7wyhtkGjRThMk2tEo-zvdeZepGUmhXEQMWc72mO-HdUHHrjI407aXjztuMEQ2yrfPOXum1Uq6rv0mnujNFXBlyghLnpVSki79bXu6V5ZvhkNmUL0YELnDQAlCfZd-4ogHT8stVqFhZ7FD0q1VPJ74QyTN635PQqO2cNXLqQxm8wLWetTj4lF4thniimkCELGnUpogIoAUsssGbbTtqfKmpMHWDdZOLcaUqidxaZ28gEw')"></div>
+<div class="absolute inset-0 bg-primary/30"></div>
+</div>
+<div class="relative z-10 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="max-w-2xl bg-surface/40 backdrop-blur-xl border border-white/30 p-8 md:p-12 rounded-2xl shadow-2xl animate-fade-in-up">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6 leading-tight">
+                        Construyendo Sueños, Haz Realidad la Casa de Tus Sueños
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 opacity-90">
+                        Más de 10 años transformando vidas a través de ingeniería de excelencia y compromiso social. La seguridad y calidad que tu familia merece.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-bold text-label-bold hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/20 transition-all" href="prototipos-3d.html">
+                            Ver Modelos 3D
+                        </a>
+<a class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-label-bold text-label-bold hover:bg-primary hover:text-on-primary transition-all" href="requisitos.html">
+                            Consultar Requisitos
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="py-12 bg-surface-container">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="bg-surface p-6 rounded-xl text-center transition-all duration-300 blue-glow hover:scale-[1.03]">
+<span class="block font-headline-lg text-headline-lg text-primary mb-1">+3,367</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Viviendas Construidas</span>
+</div>
+<div class="bg-surface p-6 rounded-xl text-center transition-all duration-300 blue-glow hover:scale-[1.03]">
+<span class="block font-headline-lg text-headline-lg text-primary mb-1">11</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Departamentos Atendidos</span>
+</div>
+<div class="bg-surface p-6 rounded-xl text-center transition-all duration-300 blue-glow hover:scale-[1.03]">
+<span class="block font-headline-lg text-headline-lg text-primary mb-1">+10 Años</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">de Experiencia</span>
+</div>
+<div class="bg-surface p-6 rounded-xl text-center transition-all duration-300 blue-glow hover:scale-[1.03]">
+<span class="block font-headline-lg text-headline-lg text-primary mb-1">1ª Empresa</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Post-Niño Costero</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3D Floor Plan Gallery -->
+<section class="py-section-gap" id="prototipos">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Explora tu Futuro Hogar</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Diseños modernos y funcionales optimizados para el confort de tu familia. Visualiza cada detalle de nuestros prototipos certificados.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Featured Master Plan -->
+<div class="lg:col-span-2 group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:scale-[1.02] neon-glow-primary border-b-2 border-outline-variant/20">
+<img alt="Plano Maestro Isométrico" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ILnQq4AKbSjOPQ1Y3i0rGEsLna3mthxPQQ_rNX2qmS2YGbAUQulu6ct99oRQGA_G7xK6_36WjKEl5UMuUG3Apqo0eSHy7-rlcBmsxpIJBN8Ly9E1LbSdxaGGIaIWtWm2thRcbpMhD85dpb10zF9BF6rxeGiK9X-w4tKXMJPKr7BJBYcU9PijmbVJPhBKssghu3-HwbiLQK-hAQmGSBR_3oY7_hzCICahBO9_n41Fu7U5KvsdSCzhLIm7bomzeAtRGw"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<span class="bg-secondary text-on-secondary text-[10px] uppercase font-bold px-2 py-1 rounded mb-2 inline-block">Prototipo A1</span>
+<h3 class="text-white font-headline-md text-headline-md">Vista de Planta Maestra</h3>
+<p class="text-white/80 font-label-sm text-label-sm">Distribución completa de ambientes integrados.</p>
+</div>
+</div>
+<!-- Gallery Grid -->
+<div class="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:scale-[1.02] neon-glow-primary">
+<img alt="Living and Dining Area" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpEwVJoNfu5fGvgcfIMw0xEHPOJdfXkQLvKwnsaMCh8GTsPZkF23uTVf0NZsCSwYDFXLtIY1Fsp2AtM1a5mQFZ7qv-RXrwxBZUq1fwXoSvVZuh39uAsHG074P5AnMzH0qMI4zBNYzqGUFtg96wMFt8aa0eMrAgNK1fZhn6hwl9NIuq8X1_REdm_klVgELgNjUqaJDz--zjOf1XGhPaFTWBMmQMFU77CFg3H1hM4UQUXxr8LmUYDQwdxsb92UtYwdBOXA"/>
+<div class="p-4 border-t border-outline-variant/10">
+<h4 class="font-bold text-primary">Sala / Comedor</h4>
+<p class="text-label-sm text-outline">Espacios amplios y bien iluminados.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:scale-[1.02] neon-glow-primary">
+<img alt="Isometric Interior View" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADF6gxdHupnXuJyDGaZY7QqEkvnynSSx1HMtlGfE6iYtV86UJ0GsbDmdFNHu2UK7QHFVZsAGckUsKwuxfPJ5plByLdz2vb3sTLbyRIMRouecIdSC4rNxLVt4VTWSdfFNWsl7EcBfeQg9uKpZglD6MOLg8k_EyJj_BQv8nMPHFEcSAwFeUXjqJhEAFb3QZzBwd6oG8IbLNYdToxf9bmWjvuzyC7eSpmbR_nClIVXUuuy9cE-8C-7k20KQr4zRw8BoqbeQ"/>
+<div class="p-4 border-t border-outline-variant/10">
+<h4 class="font-bold text-primary">Dormitorio Principal</h4>
+<p class="text-label-sm text-outline">Privacidad y confort garantizado.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:scale-[1.02] neon-glow-primary">
+<img alt="Bathroom Detail Isometric" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-zlp6VQ_Ii5_0EzpjX6tIeqE1xwYvJy8zgnFtdeaqevV_JzIUUQ5V7fZMr2krY2Yd6La4k-tR-Kmf47D1IdhIDtieWXGHcktypXRre4r2sZFaHIgiKTXn-L2YTXD0k4_8SS3JcXWyz4mv9Mm3Nh8qoD1_U-0mW-LrJfFhCdy2Twru_kR5HPSWTOwbobOiYXwMwz3Ocr1GneOMmQlk99LLNxU8ibRPllAO_dK6I4Pb66c4VpMQ8JStPCWfS5b2P0ZOnQ"/>
+<div class="p-4 border-t border-outline-variant/10">
+<h4 class="font-bold text-primary">Baño Completo</h4>
+<p class="text-label-sm text-outline">Acabados de primera calidad.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:scale-[1.02] neon-glow-primary">
+<img alt="Bedroom Arrangement" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu44yeporQ0ij4wxbeJGmSIw15uHrTH2dSeB1nd1iadZOL3C_kv6HK1LDVFWbZ5kaULwLdF4AxEaxL_Ds4x54VGdoZPaaKPAg9Fi4xLIrnm6Lk4fVdYBSSOhuHeGjyPlXd-CZG9ftgC8Mdg9qK3lI77-pW0o-ssaIZ3YWuXkRZMOKvZ4P06c7obFUeN2ZxfSMGgAtLkZ7Ex4bNMNDYq0lAS_LJWEfZiJyxlQCYW_GStUvas-d1ecBifTgG9GsmuZC25g"/>
+<div class="p-4 border-t border-outline-variant/10">
+<h4 class="font-bold text-primary">Dormitorio Secundario</h4>
+<p class="text-label-sm text-outline">Ideal para los más pequeños.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:scale-[1.02] neon-glow-primary">
+<img alt="Kitchen Isometric View" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsr8WojVFQ6hPBNxI_mU8o3l6e6BGEGMPKpHzVW3Sq1Zz58t-sKdUWJgtITZC_Jw7xQBGinJbLNsgXnyWFBbuOXUD6XoW0FHi5KmjG_Gq6BH04K3lhrFpOIZN860hm3-bW50BYPhmLpPF_gnTmUaygc6kx6xGI3o6I7c6n7fRsr51YKG2jGOWHQLXmpwVp_6IJ6BNVrxN28yD3HAX50ttl87UYP9tx1MuaLcU6HQaRA0WD0KzxJ5NvM_IVW0yhCVhiyQ"/>
+<div class="p-4 border-t border-outline-variant/10">
+<h4 class="font-bold text-primary">Cocina Funcional</h4>
+<p class="text-label-sm text-outline">Diseño ergonómico y moderno.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:scale-[1.02] neon-glow-primary">
+<img alt="Full Home Overview" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1wsJ4HQckvRthvraqVsLtdItW4rQrXS7Vh9RruYhjoWL-WSg2acussKZSt370Fwe0BHgtu6J7s-MP1otoIHxdIOQPMTyoq6fGtY0JDPSSFylugKlHhV_VukfvPBTSWv0IXQeKpFIZdfMmbdgqbf1OOKKGVlrg0wTUlRnbm_qzJ1EWA97tgLqB0so5vUDN3pHYnOOuc7Jj2AnIyMhmki8V41Fax1TDEpSW81wOMb0OOfuFKHtYAn91b3NRrX5ak4EzEw"/>
+<div class="p-4 border-t border-outline-variant/10">
+<h4 class="font-bold text-primary">Perspectiva Exterior</h4>
+<p class="text-label-sm text-outline">Estructura sismo-resistente.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-12">Nuestros Servicios</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">home</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Viviendas Sociales</h3>
+<p class="text-on-surface-variant font-body-md">Desarrollamos proyectos integrales bajo el programa Techo Propio, asegurando calidad y accesibilidad.</p>
+</div>
+<div class="bg-surface p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">construction</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Mejoramiento</h3>
+<p class="text-on-surface-variant font-body-md">Ampliación y remodelación de viviendas existentes para elevar el estándar de vida de tu familia.</p>
+</div>
+<div class="bg-surface p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">security</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Reforzamiento</h3>
+<p class="text-on-surface-variant font-body-md">Intervenciones estructurales para garantizar la seguridad sismo-resistente de tu hogar.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Requirements Section -->
+<section class="py-section-gap" id="requisitos">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Requisitos para Postular</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Accede al Bono Familiar Habitacional cumpliendo con estos simples requisitos:</p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-base" data-weight="fill">check_circle</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Título de Propiedad</h4>
+<p class="text-label-bold text-outline">Contar con terreno o aires independizados inscritos en Registros Públicos.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-base" data-weight="fill">check_circle</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Ingreso Familiar</h4>
+<p class="text-label-bold text-outline">Ingreso mensual del grupo familiar no debe exceder los S/. 2,706.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-base" data-weight="fill">check_circle</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Sin Apoyo Previo</h4>
+<p class="text-label-bold text-outline">No haber recibido apoyo habitacional del Estado anteriormente (Enace, Fovimar, etc.).</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="flex-1 w-full">
+<div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+<img class="w-full h-auto object-cover aspect-[4/3]" data-alt="A professional consultant in a bright modern office explaining the requirements for a social housing program to a smiling family. The atmosphere is warm and professional, illuminated with soft natural light. High quality corporate photography style with a focus on trust and accessibility, reflecting the brand's blue and white color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCea5j-G1cLEXsjqDocwQPontigR91CLKNRR4EBccAViegBO5Y1QKow9fXY0oPC9j9kzA_jkQbdgzTqCIAcFtz7cRxEJCmZfMVrDgk05iLqy1c6M6MYD9nlJYAYIpvQ1_Nc1SEGhVdwbfYaJyuLA2Yfr8KmTB3XdVe7t8VUdhMZ5XzUaL6UJXiyXXu8Ln-e7RmF8EcT-NbXJlLFg0-KCCBAO33MNZ_ZiJb4avKneMz77hfgCkbx0v18"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary pt-section-gap pb-8" id="contacto">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter mb-16">
+<div class="space-y-4">
+<span class="text-headline-md font-headline-md font-bold text-on-primary">Consorcio Constructor</span>
+<p class="text-surface-variant/80 font-body-md">Ingeniería con propósito social y compromiso con el desarrollo del Perú.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-primary uppercase tracking-widest mb-6">Ubicación</h4>
+<div class="flex items-start gap-3 text-surface-variant/80">
+<span class="material-symbols-outlined">location_on</span>
+<p class="text-body-md">Av. Universitaria 1234<br/>Carabayllo, Lima - Perú</p>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-primary uppercase tracking-widest mb-6">Contacto</h4>
+<div class="space-y-3 text-surface-variant/80">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">call</span>
+<a class="hover:text-secondary-fixed transition-colors" href="tel:+51987654321">+51 987 654 321</a>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">mail</span>
+<a class="hover:text-secondary-fixed transition-colors" href="mailto:informes@consorcio.com">informes@consorcioconstructor.pe</a>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-primary uppercase tracking-widest mb-6">Enlaces Rápidos</h4>
+<nav class="flex flex-col gap-3">
+<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="index.html">Inicio</a>
+<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="nosotros.html">Nosotros</a>
+<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="prototipos-3d.html">Prototipos 3D</a>
+<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="requisitos.html">Requisitos</a>
+<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="contacto.html">Contacto</a>
+</nav>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-8 border-t border-on-primary/10 text-center">
+<p class="font-label-sm text-label-sm text-surface-variant/60">© 2024 Consorcio Constructor. Todos los derechos reservados.</p>
+</div>
+</footer>
+<script>
+        // Smooth reveal interaction on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
