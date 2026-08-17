@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -85,45 +84,61 @@
                 "headline-lg": ["Montserrat"],
                 "label-sm": ["Inter"],
                 "label-bold": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
             }
           }
         }
       }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .blue-glow:hover {
-            box-shadow: 0 10px 30px -5px rgba(11, 59, 96, 0.35);
-        }
-        .neon-glow-primary:hover {
-            box-shadow: 0 0 20px rgba(0, 37, 65, 0.25);
-        }
-    </style>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
 <!-- TopNavBar -->
 <header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm transition-all duration-300">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<a class="flex items-center gap-2 group" href="index.html">
+<a class="flex items-center gap-2 group" href="#inicio">
 <img alt="Consorcio Constructor Logo" class="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMzoaH98Ol1Ce8690_Qghj3J0skHHYj0v3j2_weflqtZyB7bXGMNnGT2OZSH3KnTQMR4AT6ysvwL5Kke9a8BZcIGPAULMRl7UsH9yAyYxH7ImkyI8CAxa4S22py4Au5JnQ1NdeEd874jbADdWpYmHD5BlH3-z-EVMvgiiNTBSd9Ju27M9sqdz5Jlcu_-r7xHnuzRQV5xS_zL7sOdgEIEwpFgP-DU2Okot9cDdJYpN_ng-9NBBgIlq1J2QPGPW6baT5Tw"/>
 <span class="hidden lg:block text-headline-md font-headline-md font-bold text-primary">Consorcio Constructor</span>
 </a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-label-bold text-label-bold" href="index.html">Inicio</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="nosotros.html">Nosotros</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="prototipos-3d.html">Prototipos 3D</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="requisitos.html">Requisitos</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="contacto.html">Contacto</a>
+<nav id="desktop-nav" class="hidden md:flex items-center gap-8">
+<a class="nav-link text-secondary font-bold border-b-2 border-secondary pb-1 font-label-bold text-label-bold" href="#inicio">Inicio</a>
+<a class="nav-link text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#nosotros">Nosotros</a>
+<a class="nav-link text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#prototipos">Prototipos 3D</a>
+<a class="nav-link text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#requisitos">Requisitos</a>
+<a class="nav-link text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#contacto">Contacto</a>
 </nav>
-<a class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-bold text-label-bold hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 transition-all duration-300 active:scale-95" href="requisitos.html">
+<a class="hidden md:block bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-bold text-label-bold hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 transition-all duration-300 active:scale-95" href="#requisitos">
                 Postula a Techo Propio
             </a>
+<button id="mobile-menu-btn" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Mobile Nav -->
+<div id="mobile-nav" class="hidden md:hidden px-margin-mobile md:px-margin-desktop pb-4">
+<nav class="flex flex-col gap-4">
+<a class="nav-link text-secondary font-bold border-b-2 border-secondary pb-1 font-label-bold text-label-bold" href="#inicio">Inicio</a>
+<a class="nav-link text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#nosotros">Nosotros</a>
+<a class="nav-link text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#prototipos">Prototipos 3D</a>
+<a class="nav-link text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#requisitos">Requisitos</a>
+<a class="nav-link text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#contacto">Contacto</a>
+<a class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-bold text-label-bold hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/20 transition-all duration-300 active:scale-95 text-center" href="#requisitos">
+                    Postula a Techo Propio
+                </a>
+</nav>
 </div>
 </header>
-<main>
+<!-- ==================== PAGE: INICIO ==================== -->
+<div class="page" id="page-inicio">
 <!-- Hero Section -->
 <section class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden" id="inicio">
 <div class="absolute inset-0 z-0">
@@ -139,10 +154,10 @@
                         Más de 10 años transformando vidas a través de ingeniería de excelencia y compromiso social. La seguridad y calidad que tu familia merece.
                     </p>
 <div class="flex flex-wrap gap-4">
-<a class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-bold text-label-bold hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/20 transition-all" href="prototipos-3d.html">
+<a class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-bold text-label-bold hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/20 transition-all" href="#prototipos">
                             Ver Modelos 3D
                         </a>
-<a class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-label-bold text-label-bold hover:bg-primary hover:text-on-primary transition-all" href="requisitos.html">
+<a class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-label-bold text-label-bold hover:bg-primary hover:text-on-primary transition-all" href="#requisitos">
                             Consultar Requisitos
                         </a>
 </div>
@@ -310,67 +325,920 @@
 </div>
 </div>
 </section>
-</main>
-<!-- Footer -->
-<footer class="bg-primary text-on-primary pt-section-gap pb-8" id="contacto">
-<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter mb-16">
-<div class="space-y-4">
-<span class="text-headline-md font-headline-md font-bold text-on-primary">Consorcio Constructor</span>
-<p class="text-surface-variant/80 font-body-md">Ingeniería con propósito social y compromiso con el desarrollo del Perú.</p>
+</div>
+<!-- ==================== PAGE: NOSOTROS ==================== -->
+<div class="page" id="page-nosotros" style="display:none">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, high-angle view of a modern construction site in Peru during golden hour. Large yellow cranes rise against a deep blue sky, with a fleet of concrete mixers and workers in high-visibility gear visible below. The style is professional and corporate, using the brand's primary deep blue tones and warm sunset lighting to create a mood of progress and institutional trust." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDe4kDn1tXUu6tKwo8LsFv_PGN3SH-r15OrbrG3eNeyy6yw3h1vqj01QwqikO7tcPc8QtyvzLtgSFOE5Ni4Ru62WNWN60lc085cUsHF2B-lYEo6FSEcz70Ev8UQe1LhFPua2GnvgNO3XyDENRsIoxxowaVEdRsnfSzgVqy6uYTIxnDfFGAePU4ZJcuFZ8il6E3ABVAArQXWZHd9rCSr8F0KC6Yv9-Jn7ckBHN-dz5Nfaj0FVxkDDozh')"></div>
+<div class="absolute inset-0 bg-primary/40 backdrop-multiply"></div>
+</div>
+<div class="relative z-10 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-on-primary">
+<h1 class="font-headline-xl text-headline-xl mb-4 max-w-3xl">Construyendo los sueños de la familia peruana.</h1>
+<p class="font-body-lg text-body-lg max-w-2xl opacity-90">Somos una institución líder en ingeniería y construcción, dedicada a transformar el panorama habitacional del Perú con excelencia y compromiso social.</p>
+</div>
+</section>
+<!-- Historia de la Empresa - Asymmetric Layout -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 space-y-6">
+<span class="text-secondary font-label-bold uppercase tracking-widest">Nuestra Trayectoria</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Décadas de Solidez y Confianza</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Consorcio Constructor nació de la visión de ingenieros peruanos comprometidos con el cierre de la brecha habitacional. Desde nuestros inicios, hemos priorizado la precisión técnica y el bienestar de las familias, consolidándonos como un referente en el sector inmobiliario y de construcción civil.
+                    </p>
+<div class="flex gap-8 pt-4">
+<div>
+<div class="text-headline-md font-bold text-primary">15+</div>
+<div class="text-label-sm text-on-surface-variant">Años de Experiencia</div>
 </div>
 <div>
-<h4 class="font-label-bold text-label-bold text-on-primary uppercase tracking-widest mb-6">Ubicación</h4>
-<div class="flex items-start gap-3 text-surface-variant/80">
-<span class="material-symbols-outlined">location_on</span>
-<p class="text-body-md">Av. Universitaria 1234<br/>Carabayllo, Lima - Perú</p>
+<div class="text-headline-md font-bold text-primary">5,000+</div>
+<div class="text-label-sm text-on-surface-variant">Hogares Entregados</div>
 </div>
+</div>
+</div>
+<div class="md:col-span-7 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="pt-12">
+<img class="rounded-xl shadow-lg w-full h-[400px] object-cover glow-hover" data-alt="A vintage photograph style but with modern crispness, showing the founders of a construction company reviewing blueprints on a table with wooden scales. The lighting is focused and warm, emphasizing precision and traditional engineering values. The background features a blurred architect's office with drafting tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnrwrt-qUNxmXPcQHmTwI1bsYDD5UFhN9wqF1oXGXWG4bhI-cfdphxRBIPY_RYxGICbGMwq6-1g-bnXbs541EkUj79bW-P9KwsBqelcgXf6AXMgqRqMg_4C4HV2l7vDCf8y9LZsfvcKCM-mGQkGb6-k-6t3TgoYDhMSpi6zlSGX3Hnw-AYwwMHfFHymySJZPUEmKuz_0ZMzfi6w5_7FxBHcwjWyLzElFMBBXpM-7oghO4L37o3Ary1"/>
 </div>
 <div>
-<h4 class="font-label-bold text-label-bold text-on-primary uppercase tracking-widest mb-6">Contacto</h4>
-<div class="space-y-3 text-surface-variant/80">
-<div class="flex items-center gap-3">
+<img class="rounded-xl shadow-lg w-full h-[400px] object-cover glow-hover" data-alt="A modern architectural marvel, a residential building complex in Lima with clean white lines and sustainable greenery on the balconies. The sky is a clear primary blue, and the building reflects the sunlight brilliantly. The style is sharp, clean, and highly professional, showcasing Peruvian engineering excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoWgKVNtoZELz4ov7w7RfiADAkSlUsD1Ll6abCzuWuq0TIfTJG2tZAfOA7e7cbWKB-iHN3v_sF-b5hEg6cZzfagWUBtXAGtEtNFzHrE6mV8DpYmb1TvptxpJVDlS0HznXTtaQgDe9UxKGb4czbVA4hIUa9X0DvhRN7r2Dq-4rXQ85L3yv41EQyZirIDthv4d1F8oTp1lHZTWzyYGXYOkdn-z8BwkQzIeY9-rhTkpRQH6i324ljGgoC"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Misión y Visión - Bento Grid -->
+<section class="bg-surface-container py-section-gap">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-primary text-on-primary p-12 rounded-xl flex flex-col justify-between shadow-lg glow-hover">
+<span class="material-symbols-outlined text-4xl mb-6">rocket_launch</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-4">Nuestra Misión</h3>
+<p class="font-body-md opacity-80">Brindar soluciones habitacionales seguras, dignas y sostenibles que mejoren la calidad de vida de las familias peruanas, aplicando estándares de ingeniería de clase mundial.</p>
+</div>
+</div>
+<div class="bg-white p-12 rounded-xl flex flex-col justify-between shadow-sm border border-outline-variant/30 glow-hover">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6">visibility</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Nuestra Visión</h3>
+<p class="font-body-md text-on-surface-variant">Ser reconocidos como el consorcio constructor más confiable del país, liderando la innovación en viviendas de interés social y desarrollo urbano resiliente.</p>
+</div>
+</div>
+<div class="md:col-span-1 grid grid-rows-2 gap-gutter">
+<div class="bg-secondary-container p-8 rounded-xl text-on-secondary-container flex items-center gap-4 glow-hover">
+<span class="material-symbols-outlined text-3xl">verified</span>
+<span class="font-label-bold text-label-bold">Calidad Certificada ISO 9001</span>
+</div>
+<div class="bg-tertiary-container p-8 rounded-xl text-on-tertiary-container flex items-center gap-4 glow-hover">
+<span class="material-symbols-outlined text-3xl">eco</span>
+<span class="font-label-bold text-label-bold">Construcción Sostenible</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Nuestro Equipo - Glassmorphism Carousel Feel -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Liderazgo y Expertos</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Un equipo multidisciplinario de ingenieros, arquitectos y gestores sociales que trabajan unidos para edificar el futuro.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Team Member -->
+<div class="group">
+<div class="relative overflow-hidden rounded-xl mb-4 h-80">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional portrait of a senior Peruvian engineer, male, in his 50s, wearing a white hard hat and a corporate blue polo with the company logo. He is smiling confidently against a background of a large-scale housing project. Professional lighting, sharp focus, corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl2E289gIi3blF735M30-m7y6dPUMcsRcD4JFmILsH-KYZ18kngQPGeZEq5jbaVgw10qzf8nrstpMyXrZ2kdmMqU1QS6YZ5Ozr3P37R3HUbThd9oV15Nm_qganB3vF3KsnMQdFkjyJRXGEbo1y_D_x45DzCUPcyaUkJHkU-LNBmuqVwiYIPzvkRKdG4PT_cePQ2lvnq3Xdw-0y9ebfdcWMbylCHoZhdBCLki7MUIbCspmNsCBLZUfm"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="font-headline-md text-[20px] text-primary">Ing. Ricardo Alva</h4>
+<p class="text-secondary font-label-sm">Director de Proyectos</p>
+</div>
+<!-- Team Member -->
+<div class="group">
+<div class="relative overflow-hidden rounded-xl mb-4 h-80">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional portrait of a female lead architect, in her 40s, wearing a smart casual blazer and a safety vest, holding a digital tablet with floor plans. She is standing in a bright, modern architectural studio. The lighting is soft and flattering, emphasizing a balance of technical skill and design creativity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRD4D8UC3uMkv52-ft-b8sJZD5uLoTCSRWx2DQ4p9OW_hv0uEVlCBe4CZ8bj6YkUCXde7bSiHrbpnkVqGU_jFdLAIJ7Hv7Dx7Cb4WUgdUT8_0VYmWf-EaoJ5DTfTGsbmne6j5MffD4krJBhWOyuRRfuebSteOVvmgJERuEomJAM6TCHmtucDgtl7sJ4zBSMy6sSlfzNh2pFcyXKjw1vPU20ROrK2GeiMNsB-zKsM582yKXhOyoiSRI"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="font-headline-md text-[20px] text-primary">Arq. Sofía Mendoza</h4>
+<p class="text-secondary font-label-sm">Jefa de Diseño Urbano</p>
+</div>
+<!-- Team Member -->
+<div class="group">
+<div class="relative overflow-hidden rounded-xl mb-4 h-80">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional portrait of a male safety inspector, in his 30s, wearing a high-visibility yellow jacket and protective glasses, standing on a construction site. He looks serious and diligent, representing the company's commitment to safety standards. Clear daylight, industrial background with scaffolding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDelcLFyzoJHfY6Oj2pXc734M0xRri8kvc46VLSevVp3s74lVJLy3aJN0xb6R-v2EM_KS0o43reIM46SKZAcWofhtTTML5h5RQWhkJMJNopJvt06Lm2xZ4PrRzU1uXosjJ0bNZe9ySDDsRxzJJsXq94kX8gtDuP9K3bXUvCtX0hqBxOD49lMwbr9i46SjTQvhAlQNBYmpIglhaGwU9qAyceLBqfoFWL2dPCq8az7LkDrZrO4CbP_szo"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="font-headline-md text-[20px] text-primary">Ing. Carlos Ruíz</h4>
+<p class="text-secondary font-label-sm">Gerente de Seguridad &amp; SST</p>
+</div>
+<!-- Team Member -->
+<div class="group">
+<div class="relative overflow-hidden rounded-xl mb-4 h-80">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional portrait of a female social worker, in her 30s, wearing business casual attire, interacting warmly with a family in front of their new home. She represents the human connection and community impact of the construction projects. The background is a sunny residential park." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYILkL37o8sSXOBa4ZQb4Z8Yk-4OSxIeJA6O0QKxR5T01FeDZvvTZV56c236K2y3ZNh8NfcwFvkSRVITJGOjKQM_8ChQRrfLWYZlvEp0DkRYk0AShrl_Rmo9ooArFH9AD_NtVoCnyDMrdbquWQHfRw1qnRR8EwFjcjMWnAd_UWktPtjZNi6KD9yXBz_hJaGf7RoTv3qLuGRHSC3eRZlyIrui0BqYWAQtYuaTRtOucTg-AwNop3iokS"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="font-headline-md text-[20px] text-primary">Lic. Elena Paz</h4>
+<p class="text-secondary font-label-sm">Coordinadora Social</p>
+</div>
+</div>
+</section>
+<!-- Compromiso Social - Full Width Impact -->
+<section class="py-section-gap relative overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Compromiso con el Perú</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="bg-primary-container p-4 rounded-lg self-start">
+<span class="material-symbols-outlined text-on-primary-container">home_work</span>
+</div>
+<div>
+<h5 class="font-label-bold text-lg mb-2">Vivienda Digna para Todos</h5>
+<p class="text-on-surface-variant">Facilitamos el acceso a bonos estatales como Techo Propio, garantizando que más familias salgan de situaciones de precariedad.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="bg-secondary-container p-4 rounded-lg self-start">
+<span class="material-symbols-outlined text-on-secondary-container">group</span>
+</div>
+<div>
+<h5 class="font-label-bold text-lg mb-2">Desarrollo Comunitario</h5>
+<p class="text-on-surface-variant">No solo construimos casas, creamos barrios con áreas verdes, zonas recreativas y seguridad para el crecimiento de los niños.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="bg-tertiary-container p-4 rounded-lg self-start">
+<span class="material-symbols-outlined text-on-tertiary-container">autorenew</span>
+</div>
+<div>
+<h5 class="font-label-bold text-lg mb-2">Empleo Local</h5>
+<p class="text-on-surface-variant">Priorizamos la contratación de mano de obra local en cada uno de nuestros proyectos, impulsando la economía de las regiones.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+<img class="rounded-2xl shadow-2xl relative z-10 border-4 border-white" data-alt="A heartwarming, high-quality photograph of a multi-generational Peruvian family—grandparents, parents, and two children—standing joyfully in front of their new brightly painted house with a 'Techo Propio' banner. The sunlight is warm and inviting, highlighting their genuine smiles and the clean, secure neighborhood environment. Professional lifestyle photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGaWhl4etzhfLBBHacajr0uZAnTGwsqlqqGHrEEkfLmu3eYPnjrpUwCJzAUBaF46I-4KrHyVoLLsWbEUMOfOjkufqIz5ViX_MxPjmx6Q0hLHED4E8cM5cf-uS3uJxeH3k_s0SrGIHcXNCs7J85duqjRddq0z_WFtS2Qnst-yzRbji5e8SEs_cbvelhLxpQGBUxZmv-mKIkFz42nSj8KpzHzIqUGA1ZoMT3S8Vjrbwkowmz9wn9YfZm"/>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-primary py-16 text-center text-on-primary mb-24 mx-margin-mobile md:mx-margin-desktop rounded-3xl overflow-hidden relative">
+
+<div class="relative z-10 px-6">
+<h2 class="font-headline-lg text-headline-lg mb-6">¿Listo para construir tu futuro?</h2>
+<p class="mb-8 font-body-lg opacity-80 max-w-xl mx-auto">Nuestro equipo de asesores está listo para guiarte en el proceso de obtención de tu casa propia.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="bg-secondary text-on-primary px-8 py-4 rounded-xl font-label-bold hover:scale-105 transition-all shadow-lg" href="#prototipos">Ver Proyectos</a>
+<a class="bg-white/10 backdrop-blur-md text-on-primary border border-white/20 px-8 py-4 rounded-xl font-label-bold hover:bg-white/20 transition-all" href="#contacto">Contactar Asesor</a>
+</div>
+</div>
+</section>
+</div>
+<!-- ==================== PAGE: PROTOTIPOS ==================== -->
+<div class="page" id="page-prototipos" style="display:none">
+<!-- Hero Section for Prototipos -->
+<section class="relative pt-20 pb-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center relative z-10">
+<div class="space-y-6">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-label-sm font-label-bold uppercase tracking-wider">Visualización Avanzada</span>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">
+                        Explora tu futuro hogar en <span class="text-secondary">3D</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                        Diseños arquitectónicos optimizados para el programa Techo Propio. Espacios inteligentes, funcionales y construidos con la excelencia de la ingeniería peruana.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span>Aprobado por Fondo Mivivienda</span>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-secondary">eco</span>
+<span>Materiales Sostenibles</span>
+</div>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="bg-white p-4 rounded-xl shadow-xl rotate-3 card-glow">
+<img alt="Prototipo Principal" class="rounded-lg w-full aspect-[1.41] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo83txfYugPb1KiyIrP-WLtYVOfzTFalzC8JWqeUOBWUv51KDcSYLLoKQ0mo23rczp5-IARoP-VYIWNoZBEZypKON_ZP-mI8WVF6k6p2YzfV4wq-KITYk5W_WEL9DB1jutqPfnoa1jgd9RKtJcDSJGxG8AV6lO8eRBoukqHiZC4mKYWIJfxNb8QCSLsDqhfvjxFQZG0FHd6IPEqPDeKidwoMWQ2BnVTKn9dRuG31830Tj_khwXQ1-AZD6u-uVK6MV3JA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Gallery Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Galería de Modelos</h2>
+<p class="text-on-surface-variant font-body-md">Selecciona un modelo para ver detalles de distribución y área total.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-outline rounded-lg hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-primary-container hover:text-white transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo A1" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QnZmuy7Wg9rqyVqzKonfwQ-UuNdnszvh1XYNHds_BO1AgU0s6U69yRsIc2plHZkV0lBP0MpSzufk3z3wfCHyZ6qxX0H5FFu0Ox0BCt_vQ7rEIBsBcnENyPjmeASnpEj-7rqS9aUk16tT7oFWv2SVVXf9wgw71cgs61Ag-fhOAYF7P9R_FTN7wr6j8tEyUi9X07odUXNhHM6NHHSZqrF1ZK-rKNLnntbRAw_0fs1i00yWroADlsHm5W2SFJHCVt0kqw"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Modelo Tradicional Plus</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1 rounded text-[10px] font-bold uppercase">Popular</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2">Distribución optimizada con sala-comedor ampliada y ventilación natural cruzada.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">45.00 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">bed</span>
+<span class="text-sm font-semibold">2 Dormitorios</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo B2" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoUXLa1Lq2mpa-SiDoqlnlwN1sKdtnEyQ1OyCaT7YO355zhBe1Q3lXg75HlCafx2F3vqZzxHnJxQrNNxTaJn_25Jl1H5Y4aFx1Kd6xGcyJPs9DmIg9RE0GF2VPlGaMqzT464TqfL8huvzLgAYUVcnAR6XBPM4gVakIWhVURCfGpA8Cl2r6EDI9btIf5bZXA9e45lW6XNh4bBrOnN5A66W17nhQ8fBAPmIXKd-KtQ2ugLWE_eNTd-71Dln5EDmazuOxpg"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Vivienda Bioclimática</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Fachada diseñada para el confort térmico en climas cálidos, reduciendo el consumo energético.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">42.50 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">bathroom</span>
+<span class="text-sm font-semibold">1 Baño Completo</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo C3" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tTs1vJIVxZfJoZ9ZPgyyJR6nfBY8cJtfu1D9ZxZ1acadgqAh48IOv15TOVkM4k2gxqljvp2VN2axfi0DY0w3x0eq3hGF69rRhBQOVSdn1F3ZdAR3RQfwzS3yjfCPqqTYZYvdiVN98u1yVfEeGOb3bs-lKCK912RoO3xR-yy-2rGfWoyyrcTcFIW8g-sqk_--LqtV-nQmzui-5Smb1liJOH9628NsX6oXRq_wAEBEoU6MvtcaHqYjEJQhN8sy_gVg2w"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Compacto Funcional</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Ideal para familias jóvenes, maximizando cada metro cuadrado sin sacrificar estética.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">38.20 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">chair</span>
+<span class="text-sm font-semibold">Área Social</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo D4" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkJUTs0WZdUR5o1H_iea73zlo7qxkyqXO_l6gFZxOeIvFaPKs63PCnMTjT0DWV1puaRxIw8xRxrz_za4i6qSXQ52-avNdQLUOMFvGOInfSBgd5XaoX0BJfxkSzSARXXrh7_8sJv9wkgZPtKFk3fYyy836vcTxvtmEvhSZG0lzbfgETGL8hYXpuYMPanx4LbEImhh6y3a5n1_W0JdXPftZvha7IBZhXykA-N8cmh20tFLBoTGyThKMj0qbtiLCwrSvIBQ"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Hogar Familiar Prime</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Incluye lavandería techada y posibilidad de ampliación a segundo nivel.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">50.15 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">layers</span>
+<span class="text-sm font-semibold">Proy. 2do Piso</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo E5" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdqxoNwbZAZH9mQTXRlB8tbkDvYrSbA5jO7hy3WQ_FYN7v3ry2e0dVYczUMbiAXPO1IU0k1fJ-RfsFwgFLwdcgyETLz8-wtKrRhk4-xTUXZwRpZtfMN_ucBx5LurLSHxPtcF3Xq93J5Hj3YWlrdgCfS25LsJBrBFbV6GgAEeoAnYa0v_M78asXc5DPK8OYc3g3UyyaTS5k-QiXWgLU4hrgcBXk8FtojyFM7eoyVd_XrW5u4F_vW5KIOor9RaTm3F5Mzw"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Diseño Contemporáneo</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Líneas modernas y grandes ventanales para una iluminación excepcional.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">44.80 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">kitchen</span>
+<span class="text-sm font-semibold">Cocina Kitchenette</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo F6" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP9eEukoLYFMnT7S4ULdoF6-U0kwMoxz8K702oFO4033mvoCi5hBq3DfDJXkQPOYAUGn2_2DSYmakJxpqbFyucDhXE9djO_SNTqIZ5SbFVAJ2ugLLQCqce0VHkGzXJ97M-ZXqp3UUxSrNQhKlb4q0iD9zWNy5GdnFLfLIfnd6OdiuZWDWQeWdC91_vR0vQ6Q1bL9LcLNXaguJ2vGaAMFo3MAjaIFsWh9TKkCcsyD1buQcWq71Tvdl4yQaqfFA0avZrxg"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Módulo Básico Evolutivo</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">La mejor opción costo-beneficio para acceder rápidamente a tu primera vivienda.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">35.50 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">construction</span>
+<span class="text-sm font-semibold">Construcción Rápida</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo G7" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClFpBB4A4kiMvzmemtyYZ61bsUcrsJe61SoRJVKfleyG8L__5h-EwQEPoiZPpm7zD6GeBAUS5nWmGcZZl22FpnVpgOKcZ-ulzbd3OcaHFGRTCUBbrdYrKXI2C61uJw-ZvkaGFKfu2jAJDroLSaz3KvDfnuV37MwrXFWKbyDoQsBE_pyneibuuYnIrvHmodUYSpgECgB7Jw1qCam8yvMgLHtIiTOnoOcu440JzbfRY2jbLhW9iXWKV-rdTkHRm84m_AAw"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Suite Urbana</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Ideal para solteros o parejas, con una distribución tipo loft muy moderna.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">41.20 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">countertops</span>
+<span class="text-sm font-semibold">Acabados A1</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="shine-effect aspect-[1.41] overflow-hidden">
+<img alt="Modelo H8" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6CgnzYM5glB1mLzfm_k019zP0kqGxDxUddTTKtGp7eWF9JUv6a-tVmU3mgzfjATbioiWlgc72kWosyYsdGXmQ0Ickq1vDc_ovkK2KfNiqQ_jolGkwNiz9CMdEkszgqFqrNhwykx7tMwNMEER3M-MmVx4zJxcjGJXo5P6rY27Uk2-gyT1OnPNm4CJRVbO90L9dkQ3QtHnCcvYOBXMc49yzieA2uqU9r31mb33E6x6bamTT8746xrkdSkxavNbmTt6W-g"/>
+</div>
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Modelo Familiar XL</h3>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-2 py-1 rounded text-[10px] font-bold uppercase">Más Amplio</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2">Máxima capacidad para familias de hasta 5 integrantes con ambientes bien definidos.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">54.30 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">group</span>
+<span class="text-sm font-semibold">3 Dormitorios</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specification Info -->
+<section class="bg-primary text-on-primary py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 400 L400 0 L400 400 Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Estándares de Construcción</h2>
+<p class="text-on-primary-container max-w-2xl mx-auto font-body-md opacity-90">Utilizamos materiales certificados y procesos de ingeniería que garantizan la longevidad y seguridad de su inversión.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 text-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary-fixed-dim">rebase_edit</span>
+<h4 class="font-label-bold text-label-bold mb-2 uppercase">Estructura Sismo-resistente</h4>
+<p class="text-sm opacity-80">Diseño basado en la norma técnica peruana E.030.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 text-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary-fixed-dim">water_drop</span>
+<h4 class="font-label-bold text-label-bold mb-2 uppercase">Instalaciones Modernas</h4>
+<p class="text-sm opacity-80">Sistemas de agua y desagüe con materiales de alta densidad.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 text-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary-fixed-dim">bolt</span>
+<h4 class="font-label-bold text-label-bold mb-2 uppercase">Electricidad Certificada</h4>
+<p class="text-sm opacity-80">Circuitos independientes y tableros con protección térmica.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 text-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary-fixed-dim">palette</span>
+<h4 class="font-label-bold text-label-bold mb-2 uppercase">Acabados de Calidad</h4>
+<p class="text-sm opacity-80">Pintura de alto tráfico y cerámicos de primera selección.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<div class="bg-surface-container-high rounded-3xl p-8 md:p-16 border border-outline-variant/30 relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">¿Listo para dar el siguiente paso?</h2>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Nuestros asesores te ayudarán a elegir el prototipo que mejor se adapte a tus necesidades y te guiarán en el proceso de postulación al bono de Techo Propio.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all shadow-lg hover:shadow-secondary/20" href="#contacto">Solicitar Información</a>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all shadow-lg hover:shadow-primary/20">Descargar Catálogo</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- ==================== PAGE: REQUISITOS ==================== -->
+<div class="page" id="page-requisitos" style="display:none">
+<!-- Hero Section -->
+<section class="relative h-[400px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A professional architectural photograph of a modern housing development in Peru, featuring clean white facades and structured community spaces. The lighting is bright and warm, reflecting a sense of security and new beginnings. High-quality construction materials are visible, emphasizing durability and precision in engineering. The sky is a clear light blue, conveying a mood of optimism and institutional trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx7FFn_217w-Zrtze1XvjC5JzCv_5xb_jGcX01bRbr77j2i_adx9Z446Jz2QF25zNvIp4IAPBJeQ0ZQQ8-SdvSiNqP4RG0Wub1csmPivGHKArJ5Lv4UnchWgsR2-g8hUc3OodgeAiP8cXWjsjB-YSql1PbsO8DnYo3L3tcxA7sgZcMy-tpFv873Hx7KLUGgdzwpl9ksIu2C9rEHcE5p6wTi-hH8QDtPEKVs7quSx66cLBtRHjjtuEN"/>
+<div class="absolute inset-0 bg-primary/40"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full text-white">
+<h1 class="font-headline-xl text-headline-xl mb-4 max-w-2xl">Requisitos para tu nueva vivienda</h1>
+<p class="font-body-lg text-body-lg max-w-xl opacity-90">Todo lo que necesitas saber para acceder al Bono Familiar Habitacional y cumplir el sueño de la casa propia con Consorcio Constructor.</p>
+</div>
+</section>
+<!-- ¿Qué es el BFH? -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="space-y-6">
+<span class="text-secondary font-label-bold uppercase tracking-wider">Beneficio del Estado</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">¿Qué es el Bono Familiar Habitacional (BFH)?</h2>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                        Es un subsidio directo que otorga el Estado a una familia de manera gratuita como premio a su esfuerzo ahorrador. El bono no se devuelve y está dirigido exclusivamente a familias de escasos recursos para que puedan comprar, construir o mejorar su vivienda.
+                    </p>
+<div class="flex items-start gap-4 p-4 bg-surface-container rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">savings</span>
+<div>
+<h4 class="font-label-bold text-primary">Ahorro y esfuerzo</h4>
+<p class="text-label-sm">Es un incentivo para familias que han demostrado capacidad de ahorro para su hogar.</p>
+</div>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden shadow-xl aspect-video glow-hover transition-all">
+<img class="w-full h-full object-cover" data-alt="A heart-warming scene of a young Peruvian family, father, mother, and child, standing proudly in front of their newly constructed brick house. The afternoon sun casts long, warm shadows, creating a golden hour glow. The house is part of a neatly organized residential block, representing order and community progress. The family looks happy and secure, symbolizing the success of the Techo Propio program." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD2lzqLJ2i_GiVwC6TuE29UIKKoVRaOyxI8VWjxacLmGdwfeZmdj2ZjWsxMF0XQqfw3nfXR0pLS6BcTP-joWlfUWmWmLcuBR75r7FMDUSGdPSr4oV0Jf0JFtGdDTCCs4cReLtPoTrHG6KrdLDZM5nyV57zDtpePZ8V_4GoYxHfMfxTkRm5WjgZZrsss6RE1NDJA9UcDhjbOn3wUWUpNXVzTEXK-rrZMXf561I92MJlqb-k0ZUEn0x-"/>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Requisitos -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Requisitos para Grupos Familiares</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Verifica si cumples con los criterios básicos establecidos por el Fondo MIVIVIENDA para acceder a este programa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 glow-hover transition-all flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Grupo Familiar</h3>
+<p class="text-on-surface-variant text-body-md">Estar conformado por una Jefatura de Familia (unipersonal, cónyuges o convivientes) que tenga a su cargo dependientes.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 glow-hover transition-all flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">payments</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Ingreso Máximo</h3>
+<p class="text-on-surface-variant text-body-md">El Ingreso Familiar Mensual (IFM) neto no debe exceder el límite establecido por ley para la modalidad de Adquisición de Vivienda.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 glow-hover transition-all flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">home_work</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Propiedad</h3>
+<p class="text-on-surface-variant text-body-md">No ser propietarios de otra vivienda, terreno o aires independizados a nivel nacional para cualquier integrante del grupo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Documentación Necesaria -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row gap-gutter">
+<div class="md:w-1/3">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Documentación Necesaria</h2>
+<p class="text-on-surface-variant">Prepara estos documentos en formato físico y digital para agilizar tu proceso de postulación con nosotros.</p>
+<div class="mt-8 p-6 bg-secondary-container/10 border-l-4 border-secondary rounded-r-xl">
+<p class="text-secondary font-label-bold italic">"Contamos con asesores legales para ayudarte a revisar que toda tu documentación esté en orden."</p>
+</div>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-6 border border-outline-variant/30 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">badge</span>
+<p class="font-body-md">DNI vigente de todos los integrantes del grupo familiar.</p>
+</div>
+<div class="p-6 border border-outline-variant/30 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">description</span>
+<p class="font-body-md">Formulario de Inscripción debidamente suscrito (Nosotros lo facilitamos).</p>
+</div>
+<div class="p-6 border border-outline-variant/30 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">receipt_long</span>
+<p class="font-body-md">Boletas de pago de los últimos 3 meses o declaración jurada de ingresos.</p>
+</div>
+<div class="p-6 border border-outline-variant/30 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">fact_check</span>
+<p class="font-body-md">Certificado literal de propiedad o título (en caso de construcción en sitio propio).</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pasos para Postular -->
+<section class="py-section-gap bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Pasos para postular</h2>
+<p class="opacity-80 max-w-2xl mx-auto">Sigue esta guía paso a paso y empieza el camino hacia tu nuevo hogar con Consorcio Constructor.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<!-- Step 1 -->
+<div class="relative">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg shadow-secondary/30">1</div>
+<h4 class="font-headline-md text-headline-md mb-2">Inscripción</h4>
+<p class="opacity-70 text-sm">Registra a tu Grupo Familiar en nuestras oficinas autorizadas o puntos de atención MIVIVIENDA.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg shadow-secondary/30">2</div>
+<h4 class="font-headline-md text-headline-md mb-2">Evaluación</h4>
+<p class="opacity-70 text-sm">El Fondo MIVIVIENDA verifica que el grupo familiar cumpla con los requisitos del programa.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg shadow-secondary/30">3</div>
+<h4 class="font-headline-md text-headline-md mb-2">Elegibilidad</h4>
+<p class="opacity-70 text-sm">Una vez declarado elegible, eliges el proyecto de Consorcio Constructor que más te guste.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-lg shadow-secondary/30">4</div>
+<h4 class="font-headline-md text-headline-md mb-2">Asignación</h4>
+<p class="opacity-70 text-sm">Se gestiona el desembolso del bono y se inicia el proceso de entrega o construcción de tu casa.</p>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<a class="bg-white text-primary px-10 py-4 rounded-lg font-headline-md text-headline-md hover:scale-105 hover:shadow-white/20 transition-all duration-300" href="#contacto">
+                        ¡Quiero empezar mi trámite hoy!
+                    </a>
+</div>
+</div>
+</section>
+<!-- CTA Final with Floorplan interaction hint -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<div class="p-12 bg-surface-container rounded-3xl border border-outline-variant/20 relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">¿Aún tienes dudas sobre el proceso?</h2>
+<p class="text-on-surface-variant mb-8 max-w-xl mx-auto">Nuestros asesores expertos están listos para guiarte en cada paso. Llámanos o visítanos en nuestras sedes a nivel nacional.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-lg font-label-bold transition-transform hover:scale-105" href="#contacto">
 <span class="material-symbols-outlined">call</span>
-<a class="hover:text-secondary-fixed transition-colors" href="tel:+51987654321">+51 987 654 321</a>
+                            Contactar Asesor
+                        </a>
+<a class="flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-lg font-label-bold transition-transform hover:scale-105" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                            Ver Nuestras Sedes
+                        </a>
 </div>
-<div class="flex items-center gap-3">
+</div>
+<!-- Decorative element mimicking floorplan SVG -->
+<div class="absolute -bottom-24 -right-24 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[300px]">architecture</span>
+</div>
+</div>
+</section>
+</div>
+<!-- ==================== PAGE: CONTACTO ==================== -->
+<div class="page" id="page-contacto" style="display:none">
+<!-- Hero Section -->
+<section class="relative py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="w-full md:w-1/2">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6">Contáctanos</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">
+                            Estamos listos para ayudarte a construir el hogar de tus sueños. Nuestro equipo de expertos en ingeniería y arquitectura está a tu disposición en Carabayllo.
+                        </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-primary">Teléfono</p>
+<p class="font-body-md text-body-md">+51 987 654 321</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined">mail</span>
-<a class="hover:text-secondary-fixed transition-colors" href="mailto:informes@consorcio.com">informes@consorcioconstructor.pe</a>
 </div>
+<div>
+<p class="font-label-bold text-label-bold text-secondary">Email</p>
+<p class="font-body-md text-body-md">contacto@consorcioconstructor.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-primary">Horario de Atención</p>
+<p class="font-body-md text-body-md">Lun - Sáb: 8:00 AM - 6:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, wide-angle shot of a modern construction office in Carabayllo, Lima. The building features clean glass architecture and structural steel elements. Warm afternoon sunlight hits the facade, creating long shadows and a welcoming, high-trust professional atmosphere. In the background, the vibrant urban landscape of North Lima is visible under a clear blue sky. Professional corporate photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDodJTPozmaOAjrXgonrY4cTYMe-ne0mXpB4u98jH2xYEqkY7uBir_vh7GNT1kOGcV1CPGufjVLHhhqSSXUekN_cOW8nmrVjtzy7Z4jC1_Db-qWLzAdK8v7nCMR54A6-g5m47kk_gQWv0z3G44zCGGTJrbE5MHuyu93m4GbsjkxGEn3TYZCjM_X7ndxUlQdCKzq4rNmuKD1n2ytCE0J5cGLg4JbcODu3KOR_5dEyL3pXdsQtZxCVOR0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Form and Map Section (Bento Style) -->
+<section class="pb-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Contact Form Card -->
+<div class="lg:col-span-7 bg-surface p-8 md:p-12 rounded-xl shadow-sm border border-outline-variant/30 glow-hover transition-all">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Envíanos un Mensaje</h2>
+<form class="space-y-6" id="contactForm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant">Nombre Completo</label>
+<input class="bg-white border border-outline-variant p-3 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant">Correo Electrónico</label>
+<input class="bg-white border border-outline-variant p-3 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="juan@correo.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant">Asunto</label>
+<select class="bg-white border border-outline-variant p-3 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+<option>Consulta sobre Techo Propio</option>
+<option>Información de Prototipos 3D</option>
+<option>Visita a Obra</option>
+<option>Otros</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant">Mensaje</label>
+<textarea class="bg-white border border-outline-variant p-3 rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Escribe tu consulta aquí..." rows="4"></textarea>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-10 py-4 rounded font-label-bold text-label-bold uppercase tracking-wider hover:bg-primary-container transition-colors shadow-lg active:scale-95" type="submit">
+                                Enviar Consulta
+                            </button>
+</form>
+</div>
+<!-- Map & Location Details -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<div class="bg-surface rounded-xl overflow-hidden h-full min-h-[300px] shadow-sm border border-outline-variant/30 relative">
+<div class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur px-4 py-2 rounded-lg shadow text-primary font-label-bold">
+                                Sede Carabayllo
+                            </div>
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist map showing the Carabayllo district in Lima, Peru. The map style is customized with corporate blue and soft gray tones to match the Consorcio Constructor brand. Key landmarks and the Pacific coastline are subtly visible. The focus is on a central point representing the construction headquarters. High-resolution digital cartography style." data-location="Carabayllo, Lima, Peru" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBANzZZvC4n8OPcTNIpVVUuQlH2wzv6zMAzByb-BVCwqwsYcVPPVfX6Jqz--ppvEfB0ZvnMrFGP7Gnm5rNHuRmJ-e9HGvfKFSGgjYeJVYA9RXivzb0e7DUhkIsZYCgy_OLvbU-SXjMF7zQMNZFXyS9Y3nIgTzEsez5MjFuWjWYZKDWzMllUxkzyvMZkyNf3nqmUbbR0JP_YZxK7tPZ7cArrfrCe3I4x4rmcmiTE7Z5ZX-cBUc_j8gbL"/>
+</div>
+<div class="bg-primary text-on-primary p-8 rounded-xl shadow-lg relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-2">Visítanos</h3>
+<p class="font-body-md text-body-md opacity-90">Av. Tupac Amaru Km 21, Carabayllo</p>
+<p class="font-body-md text-body-md opacity-90 mb-6">Lima, Perú</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">directions</span>
+</a>
+</div>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined !text-9xl">architecture</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-3xl mx-auto px-margin-mobile">
+<div class="text-center mb-16">
+<span class="font-label-bold text-label-bold text-secondary uppercase tracking-[0.2em] mb-4 block">Soporte</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Preguntas Frecuentes</h2>
+</div>
+<div class="space-y-4">
+<div class="faq-item border border-outline-variant/30 rounded-lg bg-surface-container-lowest">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+<span class="font-label-bold text-label-bold text-primary">¿Qué requisitos necesito para el Bono Techo Propio?</span>
+<span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden opacity-0 faq-transition">
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                                Los requisitos principales incluyen conformar un Grupo Familiar, no haber recibido apoyo habitacional previo del Estado y que el ingreso mensual familiar no exceda los límites establecidos por el Fondo Mivivienda.
+                            </div>
+</div>
+</div>
+<div class="faq-item border border-outline-variant/30 rounded-lg bg-surface-container-lowest">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+<span class="font-label-bold text-label-bold text-primary">¿Puedo personalizar los acabados de mi casa?</span>
+<span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden opacity-0 faq-transition">
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                                Ofrecemos una variedad de paquetes de acabados premium. Durante la etapa de preventa, nuestro equipo técnico puede asesorarte sobre las opciones de personalización estructural y estética permitidas.
+                            </div>
+</div>
+</div>
+<div class="faq-item border border-outline-variant/30 rounded-lg bg-surface-container-lowest">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="toggleFaq(this)">
+<span class="font-label-bold text-label-bold text-primary">¿Cuál es el tiempo de entrega estimado?</span>
+<span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden opacity-0 faq-transition">
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                                El tiempo de entrega promedio oscila entre 8 a 12 meses después de la firma de contrato, dependiendo del proyecto específico y las etapas de construcción programadas.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Section -->
+<section class="py-20 bg-primary-container text-on-primary-container">
+<div class="max-w-container-max mx-auto px-margin-mobile text-center">
+<h3 class="font-headline-md text-headline-md mb-10">Síguenos en Redes Sociales</h3>
+<div class="flex justify-center gap-8 md:gap-16">
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-secondary transition-all">
+<span class="material-symbols-outlined">qr_code_2</span>
+</div>
+<span class="font-label-sm text-label-sm opacity-80 group-hover:opacity-100">Facebook</span>
+</a>
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-secondary transition-all">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+<span class="font-label-sm text-label-sm opacity-80 group-hover:opacity-100">Instagram</span>
+</a>
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-secondary transition-all">
+<span class="material-symbols-outlined">smart_display</span>
+</div>
+<span class="font-label-sm text-label-sm opacity-80 group-hover:opacity-100">YouTube</span>
+</a>
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-secondary transition-all">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="font-label-sm text-label-sm opacity-80 group-hover:opacity-100">LinkedIn</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-primary text-on-primary pt-section-gap pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-headline-md font-headline-md text-on-primary mb-4">Consorcio Constructor</div>
+<p class="text-surface-variant/80 text-sm mb-6">Construyendo los sueños de las familias peruanas con integridad, calidad y compromiso social.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">location_on</span>
+</a>
 </div>
 </div>
 <div>
-<h4 class="font-label-bold text-label-bold text-on-primary uppercase tracking-widest mb-6">Enlaces Rápidos</h4>
-<nav class="flex flex-col gap-3">
-<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="index.html">Inicio</a>
-<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="nosotros.html">Nosotros</a>
-<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="prototipos-3d.html">Prototipos 3D</a>
-<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="requisitos.html">Requisitos</a>
-<a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="contacto.html">Contacto</a>
-</nav>
+<h4 class="font-bold mb-6 text-secondary-fixed-dim">Enlaces Rápidos</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#inicio">Inicio</a></li>
+<li><a class="text-secondary-fixed font-bold font-label-sm text-label-sm" href="#prototipos">Prototipos 3D</a></li>
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#requisitos">Requisitos</a></li>
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#contacto">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-secondary-fixed-dim">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#">Privacidad</a></li>
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#">Términos</a></li>
+<li><a class="text-surface-variant/80 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" href="#">Preguntas Frecuentes</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-secondary-fixed-dim">Contacto</h4>
+<div class="space-y-4 text-surface-variant/80 text-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim">call</span>
+<span>(01) 445-8900</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim">mail</span>
+<span>ventas@consorcioconstructor.pe</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim">pin_drop</span>
+<span>Av. Principal 123, San Isidro, Lima</span>
 </div>
 </div>
-<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-8 border-t border-on-primary/10 text-center">
+</div>
+</div>
+<div class="border-t border-white/10 mt-16 pt-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 <p class="font-label-sm text-label-sm text-surface-variant/60">© 2024 Consorcio Constructor. Todos los derechos reservados.</p>
+<div class="flex gap-4">
+<img alt="Peru Flag" class="w-6 h-4 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnibzUY7Vdh-usjBBzP4Ap9vOEMuNdvdZxohmItWv_74sAqDbhYbRl124ni27wKhhC_1WH6LvMkhV9WtvMbAyVHAQM8R87_Bn0i_WmMUzQRm3liljdvej_bgvgZe6SIhikgHyxJ9HdaE3PlW6EhQyPwI_W3ZGLQj6tcqzq1qJSHjqnKR3Hd_YpMxF3n2HyfPsQems57rmr2nUHUbV16cq02bgEilwn-2dzOew7MhMK_AUWvkB-vsxa"/>
+<span class="font-label-sm text-label-sm text-surface-variant/60">Hecho en Perú</span>
+</div>
 </div>
 </footer>
+<script src="js/main.js"></script>
 <script>
-        // Smooth reveal interaction on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
+function navigateTo(page) {
+    document.querySelectorAll('.page').forEach(function(p) { p.style.display = 'none'; });
+    var target = document.getElementById('page-' + page);
+    if (target) target.style.display = 'block';
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, observerOptions);
+    document.querySelectorAll('#desktop-nav .nav-link, #mobile-nav .nav-link').forEach(function(link) {
+        link.classList.remove('text-secondary', 'font-bold', 'border-b-2', 'border-secondary', 'pb-1');
+        link.classList.add('text-on-surface-variant', 'hover:text-primary', 'transition-colors');
+        if (link.getAttribute('href') === '#' + page) {
+            link.classList.add('text-secondary', 'font-bold', 'border-b-2', 'border-secondary', 'pb-1');
+            link.classList.remove('text-on-surface-variant');
+        }
+    });
 
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
-            observer.observe(section);
-        });
-    </script>
+    var mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav) mobileNav.classList.add('hidden');
+
+    window.scrollTo(0, 0);
+}
+
+function handleRoute() {
+    var hash = window.location.hash.slice(1) || 'inicio';
+    navigateTo(hash);
+}
+
+window.addEventListener('hashchange', handleRoute);
+window.addEventListener('DOMContentLoaded', handleRoute);
+
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    var mobileNav = document.getElementById('mobile-nav');
+    mobileNav.classList.toggle('hidden');
+});
+</script>
 </body></html>

@@ -6,30 +6,31 @@
 
 ## Descripción
 
-Plataforma web diseñada para presentar los servicios, prototipos 3D y proceso de postulación al programa Techo Propio. Construida con HTML5 y Tailwind CSS, con un diseño moderno, responsivo y optimizado para dispositivos móviles.
+Plataforma web tipo SPA (Single Page Application) diseñada para presentar los servicios, prototipos 3D y proceso de postulación al programa Techo Propio. Construida con HTML5, Tailwind CSS y JavaScript vanilla, con un diseño moderno, responsivo y optimizado para dispositivos móviles.
 
 ---
 
-## Paginas del sitio
+## Secciones del sitio
 
-| Pagina | Archivo | Descripcion |
-| ------ | ------- | ----------- |
-| **Inicio** | `index.html` | Pagina principal: hero, servicios, beneficios y llamado a la accion |
-| **Nosotros** | `nosotros.html` | Historia, mision, vision y equipo de la empresa |
-| **Prototipos 3D** | `prototipos-3d.html` | Galeria de modelos 3D de las viviendas disponibles |
-| **Requisitos** | `requisitos.html` | Documentos y pasos para postular al programa Techo Propio |
-| **Contacto** | `contacto.html` | Formulario de contacto y datos de la empresa |
+| Sección | Ruta | Descripción |
+| ------- | ---- | ----------- |
+| **Inicio** | `#inicio` | Hero, barra de confianza, galería 3D, servicios y requisitos |
+| **Nosotros** | `#nosotros` | Historia, misión, visión, equipo y compromiso social |
+| **Prototipos 3D** | `#prototipos` | Galería de modelos 3D con especificaciones técnicas |
+| **Requisitos** | `#requisitos` | Documentos, pasos y BFH para postular al programa |
+| **Contacto** | `#contacto` | Formulario, mapa, FAQ y redes sociales |
 
 ---
 
-## Tecnologias utilizadas
+## Tecnologías utilizadas
 
-| Tecnologia | Uso |
+| Tecnología | Uso |
 | ---------- | --- |
-| **HTML5** | Estructura y semantica de las 5 paginas |
-| **Tailwind CSS** | Framework CSS (via CDN) para diseño responsivo y utilitario |
-| **Material Symbols** | Iconografia Google Material Design |
-| **Google Fonts** | Tipografias Montserrat e Inter |
+| **HTML5** | Estructura semántica del sitio |
+| **Tailwind CSS** | Framework CSS (vía CDN) para diseño responsivo y utilitario |
+| **JavaScript** | Navegación SPA, interacciones y formularios |
+| **Material Symbols** | Iconografía Google Material Design |
+| **Google Fonts** | Tipografías Montserrat e Inter |
 
 ---
 
@@ -37,22 +38,22 @@ Plataforma web diseñada para presentar los servicios, prototipos 3D y proceso d
 
 ```
 CONSORCIO CONSTRUCTOR/
-├── index.html           # Pagina principal (Inicio)
-├── nosotros.html        # Pagina Nosotros
-├── prototipos-3d.html   # Pagina Prototipos 3D
-├── requisitos.html      # Pagina Requisitos (postulacion)
-├── contacto.html        # Pagina de Contacto
-├── previews/            # Capturas de pantalla de cada pagina
-├── DESIGN.md            # Documento de diseno
+├── index.html           # SPA — todas las secciones en un solo archivo
+├── css/
+│   └── style.css        # Estilos custom (glow, shine, FAQ, etc.)
+├── js/
+│   └── main.js          # JavaScript (scroll reveal, FAQ, form, etc.)
+├── previews/            # Capturas de pantalla de cada sección
+├── DESIGN.md            # Documento de diseño
 ├── .gitignore           # Archivos ignorados por Git
-└── README.md            # Documentacion del proyecto
+└── README.md            # Documentación del proyecto
 ```
 
 ---
 
-## Ejecucion local
+## Ejecución local
 
-No se requiere instalacion de dependencias. Abre el archivo `index.html` directamente en tu navegador:
+No se requiere instalación de dependencias. Abre el archivo `index.html` directamente en tu navegador:
 
 ```bash
 git clone https://github.com/jayson-tabpe/consorcio-constructor.git
@@ -63,9 +64,21 @@ open index.html         # macOS / Linux
 
 ---
 
+## Navegación
+
+El sitio utiliza **hash-based routing** para navegar entre secciones sin recargar la página:
+
+- `#inicio` — Página principal
+- `#nosotros` — Sobre la empresa
+- `#prototipos` — Galería de modelos 3D
+- `#requisitos` — Requisitos de postulación
+- `#contacto` — Formulario de contacto
+
+---
+
 ## Capturas de pantalla
 
-Vista previa de cada pagina se encuentra en la carpeta `previews/`.
+Vista previa de cada sección se encuentra en la carpeta `previews/`.
 
 ---
 
