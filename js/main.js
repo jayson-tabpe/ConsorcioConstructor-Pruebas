@@ -61,6 +61,91 @@ document.querySelectorAll('a').forEach(link => {
     });
 });
 
+// --- Lógica Dinámica de Sedes y Mapas ---
+
+const sedesData = {
+    'lima': {
+        badge: 'Sede Carabayllo',
+        title: 'Lima - Carabayllo',
+        address: 'Av. Peruirbana Mz. W Lt10, Condominio Villa Club 3, Carabayllo',
+        mapUrl: 'https://maps.app.goo.gl/ubsK8wAFer7M6KZG7',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBANzZZvC4n8OPcTNIpVVUuQlH2wzv6zMAzByb-BVCwqwsYcVPPVfX6Jqz--ppvEfB0ZvnMrFGP7Gnm5rNHuRmJ-e9HGvfKFSGgjYeJVYA9RXivzb0e7DUhkIsZYCgy_OLvbU-SXjMF7zQMNZFXyS9Y3nIgTzEsez5MjFuWjWYZKDWzMllUxkzyvMZkyNf3nqmUbbR0JP_YZxK7tPZ7cArrfrCe3I4x4rmcmiTE7Z5ZX-cBUc_j8gbL'
+    },
+    'ica': {
+        badge: 'Sede Pueblo Nuevo',
+        title: 'Ica - Pueblo Nuevo',
+        address: 'Calle 20 Mz M, Lotes 19, 20 y 21, Urb. Valle Esmeralda, Distrito de Pueblo Nuevo',
+        mapUrl: 'https://maps.app.goo.gl/ubsK8wAFer7M6KZG7', // <-- Reemplazar
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBANzZZvC4n8OPcTNIpVVUuQlH2wzv6zMAzByb-BVCwqwsYcVPPVfX6Jqz--ppvEfB0ZvnMrFGP7Gnm5rNHuRmJ-e9HGvfKFSGgjYeJVYA9RXivzb0e7DUhkIsZYCgy_OLvbU-SXjMF7zQMNZFXyS9Y3nIgTzEsez5MjFuWjWYZKDWzMllUxkzyvMZkyNf3nqmUbbR0JP_YZxK7tPZ7cArrfrCe3I4x4rmcmiTE7Z5ZX-cBUc_j8gbL' // <-- Reemplaza por imagen Ica
+    },
+    'lambayeque': {
+        badge: 'Sede Olmos',
+        title: 'Lambayeque - Olmos',
+        address: 'Av Augusto B Leguía N° 190, Distrito Olmos',
+        mapUrl: 'https://maps.app.goo.gl/ubsK8wAFer7M6KZG7', // <-- Reemplazar
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBANzZZvC4n8OPcTNIpVVUuQlH2wzv6zMAzByb-BVCwqwsYcVPPVfX6Jqz--ppvEfB0ZvnMrFGP7Gnm5rNHuRmJ-e9HGvfKFSGgjYeJVYA9RXivzb0e7DUhkIsZYCgy_OLvbU-SXjMF7zQMNZFXyS9Y3nIgTzEsez5MjFuWjWYZKDWzMllUxkzyvMZkyNf3nqmUbbR0JP_YZxK7tPZ7cArrfrCe3I4x4rmcmiTE7Z5ZX-cBUc_j8gbL' // <-- Reemplaza por imagen Lambayeque
+    }
+};
+
+function changeSede(sede) {
+    // Actualizar apariencia de los botones
+    document.querySelectorAll('.sede-btn').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+        btn.classList.add('bg-surface', 'text-primary', 'border', 'border-outline-variant/30', 'shadow-sm', 'hover:bg-surface-variant');
+    });
+    const activeBtn = document.getElementById('btn-' + sede);
+    activeBtn.classList.remove('bg-surface', 'text-primary', 'border', 'border-outline-variant/30', 'shadow-sm', 'hover:bg-surface-variant');
+    activeBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+
+    // Preparar elementos para animación
+    const mapBadge = document.getElementById('map-badge');
+    const mapImg = document.getElementById('map-image');
+    const vTitle = document.getElementById('visitanos-title');
+    const vAddress = document.getElementById('visitanos-address');
+    const dLink = document.getElementById('directions-link');
+
+    mapImg.style.opacity = '0';
+    vTitle.style.opacity = '0';
+    vAddress.style.opacity = '0';
+
+    // Intercambiar datos con efecto fade
+    setTimeout(() => {
+        mapBadge.textContent = sedesData[sede].badge;
+        vTitle.textContent = sedesData[sede].title;
+        vAddress.textContent = sedesData[sede].address;
+        dLink.href = sedesData[sede].mapUrl; 
+        mapImg.src = sedesData[sede].image; 
+        
+        mapImg.style.opacity = '1';
+        vTitle.style.opacity = '1';
+        vAddress.style.opacity = '1';
+    }, 300);
+}
+
+// Función para copiar enlace al portapapeles
+function copyMapLink(e) {
+    e.preventDefault();
+    const link = document.getElementById('directions-link').href;
+    
+    navigator.clipboard.writeText(link).then(() => {
+        const toast = document.getElementById('copy-toast');
+        if (toast) {
+            // Mostrar notificación
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+            
+            // Ocultar automáticamente después de 2.5 segundos
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2500);
+        }
+    }).catch(err => {
+        console.error('Error al copiar el enlace: ', err);
+    });
+}
+
+
 // --- FAQ Toggle (Contacto) ---
 function toggleFaq(button) {
     const content = button.nextElementSibling;
