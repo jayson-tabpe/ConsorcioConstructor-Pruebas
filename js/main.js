@@ -62,28 +62,27 @@ document.querySelectorAll('a').forEach(link => {
 });
 
 // --- Lógica Dinámica de Sedes y Mapas ---
-
 const sedesData = {
     'lima': {
-        badge: 'Sede Carabayllo',
-        title: 'Lima - Carabayllo',
-        address: 'Av. Peruirbana Mz. W Lt10, Condominio Villa Club 3, Carabayllo',
-        mapUrl: 'https://maps.app.goo.gl/ubsK8wAFer7M6KZG7',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBANzZZvC4n8OPcTNIpVVUuQlH2wzv6zMAzByb-BVCwqwsYcVPPVfX6Jqz--ppvEfB0ZvnMrFGP7Gnm5rNHuRmJ-e9HGvfKFSGgjYeJVYA9RXivzb0e7DUhkIsZYCgy_OLvbU-SXjMF7zQMNZFXyS9Y3nIgTzEsez5MjFuWjWYZKDWzMllUxkzyvMZkyNf3nqmUbbR0JP_YZxK7tPZ7cArrfrCe3I4x4rmcmiTE7Z5ZX-cBUc_j8gbL'
+        badge: 'Sede Los Olivos',
+        title: 'Lima - Los Olivos',
+        address: 'Av. Próceres de Huandoy Mz. C Lt. 13, 3er Piso, Los Olivos',
+        mapUrl: 'https://maps.app.goo.gl/mhcXXkTqkGnoRnbD6',
+        embedUrl: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3869.4851217001496!2d-75.71763102490321!3d-14.10754408632243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDA2JzI3LjIiUyA3NcKwNDInNTQuMiJX!5e0!3m2!1ses!2spe!4v1788240121368!5m2!1ses!2spe'
     },
     'ica': {
         badge: 'Sede Pueblo Nuevo',
         title: 'Ica - Pueblo Nuevo',
         address: 'Calle 20 Mz M, Lotes 19, 20 y 21, Urb. Valle Esmeralda, Distrito de Pueblo Nuevo',
-        mapUrl: 'https://maps.app.goo.gl/ubsK8wAFer7M6KZG7', // <-- Reemplazar
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBANzZZvC4n8OPcTNIpVVUuQlH2wzv6zMAzByb-BVCwqwsYcVPPVfX6Jqz--ppvEfB0ZvnMrFGP7Gnm5rNHuRmJ-e9HGvfKFSGgjYeJVYA9RXivzb0e7DUhkIsZYCgy_OLvbU-SXjMF7zQMNZFXyS9Y3nIgTzEsez5MjFuWjWYZKDWzMllUxkzyvMZkyNf3nqmUbbR0JP_YZxK7tPZ7cArrfrCe3I4x4rmcmiTE7Z5ZX-cBUc_j8gbL' // <-- Reemplaza por imagen Ica
+        mapUrl: 'https://maps.app.goo.gl/5RfGWYXHLqX3Zhwb8',
+        embedUrl: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d21888.745778829158!2d-75.7244759042409!3d-14.111371905170484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDA2JzI3LjIiUyA3NcKwNDInNTQuMiJX!5e0!3m2!1ses!2spe!4v1788240399822!5m2!1ses!2spe'
     },
     'lambayeque': {
         badge: 'Sede Olmos',
         title: 'Lambayeque - Olmos',
         address: 'Av Augusto B Leguía N° 190, Distrito Olmos',
-        mapUrl: 'https://maps.app.goo.gl/ubsK8wAFer7M6KZG7', // <-- Reemplazar
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBANzZZvC4n8OPcTNIpVVUuQlH2wzv6zMAzByb-BVCwqwsYcVPPVfX6Jqz--ppvEfB0ZvnMrFGP7Gnm5rNHuRmJ-e9HGvfKFSGgjYeJVYA9RXivzb0e7DUhkIsZYCgy_OLvbU-SXjMF7zQMNZFXyS9Y3nIgTzEsez5MjFuWjWYZKDWzMllUxkzyvMZkyNf3nqmUbbR0JP_YZxK7tPZ7cArrfrCe3I4x4rmcmiTE7Z5ZX-cBUc_j8gbL' // <-- Reemplaza por imagen Lambayeque
+        mapUrl: 'https://maps.app.goo.gl/Adqc457dxT7dMjDeA',
+        embedUrl: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3968.0649818284896!2d-79.741687!3d-5.985791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwNTknMDguOSJTIDc5wrA0NCczMC4xIlc!5e0!3m2!1ses!2spe!4v1788240270662!5m2!1ses!2spe'
     }
 };
 
@@ -97,32 +96,30 @@ function changeSede(sede) {
     activeBtn.classList.remove('bg-surface', 'text-primary', 'border', 'border-outline-variant/30', 'shadow-sm', 'hover:bg-surface-variant');
     activeBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
 
-    // Preparar elementos para animación
+    // Identificar el Iframe en lugar de la imagen
     const mapBadge = document.getElementById('map-badge');
-    const mapImg = document.getElementById('map-image');
+    const mapIframe = document.getElementById('map-iframe');
     const vTitle = document.getElementById('visitanos-title');
     const vAddress = document.getElementById('visitanos-address');
     const dLink = document.getElementById('directions-link');
 
-    mapImg.style.opacity = '0';
+    mapIframe.style.opacity = '0';
     vTitle.style.opacity = '0';
     vAddress.style.opacity = '0';
 
-    // Intercambiar datos con efecto fade
     setTimeout(() => {
         mapBadge.textContent = sedesData[sede].badge;
         vTitle.textContent = sedesData[sede].title;
         vAddress.textContent = sedesData[sede].address;
         dLink.href = sedesData[sede].mapUrl; 
-        mapImg.src = sedesData[sede].image; 
+        mapIframe.src = sedesData[sede].embedUrl; // Inserta el mapa interactivo
         
-        mapImg.style.opacity = '1';
+        mapIframe.style.opacity = '1';
         vTitle.style.opacity = '1';
         vAddress.style.opacity = '1';
     }, 300);
 }
 
-// Función para copiar enlace al portapapeles
 function copyMapLink(e) {
     e.preventDefault();
     const link = document.getElementById('directions-link').href;
@@ -130,19 +127,14 @@ function copyMapLink(e) {
     navigator.clipboard.writeText(link).then(() => {
         const toast = document.getElementById('copy-toast');
         if (toast) {
-            // Mostrar notificación
             toast.classList.remove('opacity-0');
             toast.classList.add('opacity-100');
-            
-            // Ocultar automáticamente después de 2.5 segundos
             setTimeout(() => {
                 toast.classList.remove('opacity-100');
                 toast.classList.add('opacity-0');
             }, 2500);
         }
-    }).catch(err => {
-        console.error('Error al copiar el enlace: ', err);
-    });
+    }).catch(err => console.error('Error:', err));
 }
 
 
