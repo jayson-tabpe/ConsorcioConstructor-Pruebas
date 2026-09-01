@@ -194,7 +194,7 @@
 <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Explora tu Futuro Hogar</h2>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Diseños modernos y funcionales optimizados para el confort de tu familia. Visualiza cada detalle de nuestros prototipos certificados.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Featured Master Plan -->
 <div class="lg:col-span-2 group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:scale-[1.02] neon-glow-primary border-b-2 border-outline-variant/20">
 <img alt="Plano Maestro Isométrico" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ILnQq4AKbSjOPQ1Y3i0rGEsLna3mthxPQQ_rNX2qmS2YGbAUQulu6ct99oRQGA_G7xK6_36WjKEl5UMuUG3Apqo0eSHy7-rlcBmsxpIJBN8Ly9E1LbSdxaGGIaIWtWm2thRcbpMhD85dpb10zF9BF6rxeGiK9X-w4tKXMJPKr7BJBYcU9PijmbVJPhBKssghu3-HwbiLQK-hAQmGSBR_3oY7_hzCICahBO9_n41Fu7U5KvsdSCzhLIm7bomzeAtRGw"/>
@@ -318,7 +318,7 @@
 </div>
 <div class="flex-1 w-full">
 <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-<img class="w-full h-auto object-cover aspect-[4/3]" data-alt="A professional consultant in a bright modern office explaining the requirements for a social housing program to a smiling family. The atmosphere is warm and professional, illuminated with soft natural light. High quality corporate photography style with a focus on trust and accessibility, reflecting the brand's blue and white color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCea5j-G1cLEXsjqDocwQPontigR91CLKNRR4EBccAViegBO5Y1QKow9fXY0oPC9j9kzA_jkQbdgzTqCIAcFtz7cRxEJCmZfMVrDgk05iLqy1c6M6MYD9nlJYAYIpvQ1_Nc1SEGhVdwbfYaJyuLA2Yfr8KmTB3XdVe7t8VUdhMZ5XzUaL6UJXiyXXu8Ln-e7RmF8EcT-NbXJlLFg0-KCCBAO33MNZ_ZiJb4avKneMz77hfgCkbx0v18"/>
+<img class="w-full h-auto object-cover aspect-[4/3]" data-alt="A professional consultant in a bright modern office explaining the requirements for a social housing program to a smiling family. The atmosphere is warm and professional, illuminated with soft natural light. High quality corporate photography style with a focus on trust and accessibility, reflecting the brand's blue and white color palette." src="previews/foto.jfif"/>
 <div class="absolute inset-0 bg-primary/10"></div>
 </div>
 </div>
@@ -541,21 +541,20 @@
 <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Galería de Modelos</h2>
 <p class="text-on-surface-variant font-body-md">Selecciona un modelo para ver detalles de distribución y área total.</p>
 </div>
-<div class="flex gap-2">
-<button class="p-2 border border-outline rounded-lg hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">grid_view</span>
-</button>
-<button class="p-2 border border-outline-variant rounded-lg hover:bg-primary-container hover:text-white transition-colors">
-<span class="material-symbols-outlined">filter_list</span>
-</button>
+
 </div>
+<div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- MODELO 1 Section -->
+<div class="col-span-full">
+<h3 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
+<span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">home</span>
+</span>
+MODELO 1 - Viviendas Completas
+</h3>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Card 1 -->
+<!-- Modelo 1 - 35m2 Mejorado -->
 <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
-<div class="shine-effect aspect-[1.41] overflow-hidden">
-<img alt="Modelo A1" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QnZmuy7Wg9rqyVqzKonfwQ-UuNdnszvh1XYNHds_BO1AgU0s6U69yRsIc2plHZkV0lBP0MpSzufk3z3wfCHyZ6qxX0H5FFu0Ox0BCt_vQ7rEIBsBcnENyPjmeASnpEj-7rqS9aUk16tT7oFWv2SVVXf9wgw71cgs61Ag-fhOAYF7P9R_FTN7wr6j8tEyUi9X07odUXNhHM6NHHSZqrF1ZK-rKNLnntbRAw_0fs1i00yWroADlsHm5W2SFJHCVt0kqw"/>
-</div>
 <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-2">
@@ -574,14 +573,11 @@
 <span class="text-sm font-semibold">2 Dormitorios</span>
 </div>
 </div>
-<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%201/MODELO%201%20-%2035m2/MODELO%201%20-%2035m2%20MEJORADO/MODELO%201%20-%2035m2%20MEJORADO_page-0001.jpg" data-img2="previews/Modelos/MODELO%201/MODELO%201%20-%2035m2/MODELO%201%20-%2035m2%20MEJORADO/MODELO%201%20-%2035m2%20MEJORADO_page-0002.jpg" data-model="Modelo 1 - 35m2 Mejorado">Ver Planos</button>
 </div>
 </div>
-<!-- Card 2 -->
+<!-- Modelo 1 - 35m2 Tradicional -->
 <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
-<div class="shine-effect aspect-[1.41] overflow-hidden">
-<img alt="Modelo B2" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoUXLa1Lq2mpa-SiDoqlnlwN1sKdtnEyQ1OyCaT7YO355zhBe1Q3lXg75HlCafx2F3vqZzxHnJxQrNNxTaJn_25Jl1H5Y4aFx1Kd6xGcyJPs9DmIg9RE0GF2VPlGaMqzT464TqfL8huvzLgAYUVcnAR6XBPM4gVakIWhVURCfGpA8Cl2r6EDI9btIf5bZXA9e45lW6XNh4bBrOnN5A66W17nhQ8fBAPmIXKd-KtQ2ugLWE_eNTd-71Dln5EDmazuOxpg"/>
-</div>
 <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 1 - 35m2 Tradicional</h3>
@@ -597,14 +593,11 @@
 <span class="text-sm font-semibold">1 Baño Completo</span>
 </div>
 </div>
-<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%201/MODELO%201%20-%2035m2/MODELO%201%20-%2035m2%20TRADICIONAL/MODELO%201%20-%2035m2%20TRADICIONAL_pages-to-jpg-0001.jpg" data-img2="previews/Modelos/MODELO%201/MODELO%201%20-%2035m2/MODELO%201%20-%2035m2%20TRADICIONAL/MODELO%201%20-%2035m2%20TRADICIONAL_pages-to-jpg-0002.jpg" data-model="Modelo 1 - 35m2 Tradicional">Ver Planos</button>
 </div>
 </div>
-<!-- Card 3 -->
+<!-- Modelo 1 - 40m2 Mejorado -->
 <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
-<div class="shine-effect aspect-[1.41] overflow-hidden">
-<img alt="Modelo C3" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tTs1vJIVxZfJoZ9ZPgyyJR6nfBY8cJtfu1D9ZxZ1acadgqAh48IOv15TOVkM4k2gxqljvp2VN2axfi0DY0w3x0eq3hGF69rRhBQOVSdn1F3ZdAR3RQfwzS3yjfCPqqTYZYvdiVN98u1yVfEeGOb3bs-lKCK912RoO3xR-yy-2rGfWoyyrcTcFIW8g-sqk_--LqtV-nQmzui-5Smb1liJOH9628NsX6oXRq_wAEBEoU6MvtcaHqYjEJQhN8sy_gVg2w"/>
-</div>
 <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 1 - 40m2 Mejorado</h3>
@@ -620,14 +613,11 @@
 <span class="text-sm font-semibold">Área Social</span>
 </div>
 </div>
-<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%201/MODELO%201%20-%2040m2/MODELO%201%20-%2040m2%20MEJORADO/MODELO%201%20-%2040m2%20MEJORADO_page-0001.jpg" data-img2="previews/Modelos/MODELO%201/MODELO%201%20-%2040m2/MODELO%201%20-%2040m2%20MEJORADO/MODELO%201%20-%2040m2%20MEJORADO_page-0002.jpg" data-model="Modelo 1 - 40m2 Mejorado">Ver Planos</button>
 </div>
 </div>
-<!-- Card 4 -->
+<!-- Modelo 1 - 40m2 Tradicional -->
 <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
-<div class="shine-effect aspect-[1.41] overflow-hidden">
-<img alt="Modelo D4" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkJUTs0WZdUR5o1H_iea73zlo7qxkyqXO_l6gFZxOeIvFaPKs63PCnMTjT0DWV1puaRxIw8xRxrz_za4i6qSXQ52-avNdQLUOMFvGOInfSBgd5XaoX0BJfxkSzSARXXrh7_8sJv9wkgZPtKFk3fYyy836vcTxvtmEvhSZG0lzbfgETGL8hYXpuYMPanx4LbEImhh6y3a5n1_W0JdXPftZvha7IBZhXykA-N8cmh20tFLBoTGyThKMj0qbtiLCwrSvIBQ"/>
-</div>
 <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 1 - 40m2 Tradicional</h3>
@@ -643,14 +633,11 @@
 <span class="text-sm font-semibold">Proy. 2do Piso</span>
 </div>
 </div>
-<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%201/MODELO%201%20-%2040m2/MODELO%201%20-%2040m2%20TRADICIONAL/MODELO%201%20-%2040m2%20TRADICIONAL_page-0001.jpg" data-img2="previews/Modelos/MODELO%201/MODELO%201%20-%2040m2/MODELO%201%20-%2040m2%20TRADICIONAL/MODELO%201%20-%2040m2%20TRADICIONAL_page-0002.jpg" data-model="Modelo 1 - 40m2 Tradicional">Ver Planos</button>
 </div>
 </div>
-<!-- Card 5 -->
+<!-- Modelo 1 - 60m2 Mejorado -->
 <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
-<div class="shine-effect aspect-[1.41] overflow-hidden">
-<img alt="Modelo E5" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdqxoNwbZAZH9mQTXRlB8tbkDvYrSbA5jO7hy3WQ_FYN7v3ry2e0dVYczUMbiAXPO1IU0k1fJ-RfsFwgFLwdcgyETLz8-wtKrRhk4-xTUXZwRpZtfMN_ucBx5LurLSHxPtcF3Xq93J5Hj3YWlrdgCfS25LsJBrBFbV6GgAEeoAnYa0v_M78asXc5DPK8OYc3g3UyyaTS5k-QiXWgLU4hrgcBXk8FtojyFM7eoyVd_XrW5u4F_vW5KIOor9RaTm3F5Mzw"/>
-</div>
 <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 1 - 60m2 Mejorado</h3>
@@ -666,14 +653,11 @@
 <span class="text-sm font-semibold">Cocina Kitchenette</span>
 </div>
 </div>
-<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%201/MODELO%201%20-%2060m2/MODELO%201%20-%2060m2%20MEJORADO/MODELO%201%20-%2060m2%20MEJORADO_page-0001.jpg" data-img2="previews/Modelos/MODELO%201/MODELO%201%20-%2060m2/MODELO%201%20-%2060m2%20MEJORADO/MODELO%201%20-%2060m2%20MEJORADO_page-0002.jpg" data-model="Modelo 1 - 60m2 Mejorado">Ver Planos</button>
 </div>
 </div>
-<!-- Card 6 -->
+<!-- Modelo 1 - 60m2 Tradicional -->
 <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
-<div class="shine-effect aspect-[1.41] overflow-hidden">
-<img alt="Modelo F6" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP9eEukoLYFMnT7S4ULdoF6-U0kwMoxz8K702oFO4033mvoCi5hBq3DfDJXkQPOYAUGn2_2DSYmakJxpqbFyucDhXE9djO_SNTqIZ5SbFVAJ2ugLLQCqce0VHkGzXJ97M-ZXqp3UUxSrNQhKlb4q0iD9zWNy5GdnFLfLIfnd6OdiuZWDWQeWdC91_vR0vQ6Q1bL9LcLNXaguJ2vGaAMFo3MAjaIFsWh9TKkCcsyD1buQcWq71Tvdl4yQaqfFA0avZrxg"/>
-</div>
 <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 1 - 60m2 Tradicional</h3>
@@ -689,14 +673,11 @@
 <span class="text-sm font-semibold">Construcción Rápida</span>
 </div>
 </div>
-<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%201/MODELO%201%20-%2060m2/MODELO%201%20-%2060m2%20TRADICIONAL/MODELO%201%20-%2060m2%20TRADICIONAL_page-0001.jpg" data-img2="previews/Modelos/MODELO%201/MODELO%201%20-%2060m2/MODELO%201%20-%2060m2%20TRADICIONAL/MODELO%201%20-%2060m2%20TRADICIONAL_page-0002.jpg" data-model="Modelo 1 - 60m2 Tradicional">Ver Planos</button>
 </div>
 </div>
-<!-- Card 7 -->
+<!-- Modelo 1 - 80m2 Tradicional -->
 <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
-<div class="shine-effect aspect-[1.41] overflow-hidden">
-<img alt="Modelo G7" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClFpBB4A4kiMvzmemtyYZ61bsUcrsJe61SoRJVKfleyG8L__5h-EwQEPoiZPpm7zD6GeBAUS5nWmGcZZl22FpnVpgOKcZ-ulzbd3OcaHFGRTCUBbrdYrKXI2C61uJw-ZvkaGFKfu2jAJDroLSaz3KvDfnuV37MwrXFWKbyDoQsBE_pyneibuuYnIrvHmodUYSpgECgB7Jw1qCam8yvMgLHtIiTOnoOcu440JzbfRY2jbLhW9iXWKV-rdTkHRm84m_AAw"/>
-</div>
 <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 1 - 80m2 Tradicional</h3>
@@ -712,14 +693,20 @@
 <span class="text-sm font-semibold">Acabados A1</span>
 </div>
 </div>
-<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%201/MODELO%201%20-%2080m2/MODELO%201%20-%2080m2%20TRADICIONAL/MODELO%201%20-%2080m2%20TRADICIONAL_page-0001.jpg" data-img2="previews/Modelos/MODELO%201/MODELO%201%20-%2080m2/MODELO%201%20-%2080m2%20TRADICIONAL/MODELO%201%20-%2080m2%20TRADICIONAL_page-0002.jpg" data-model="Modelo 1 - 80m2 Tradicional">Ver Planos</button>
 </div>
 </div>
-<!-- Card 8 -->
+<!-- MODELO 2 Section -->
+<div class="col-span-full">
+<h3 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
+<span class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">apartment</span>
+</span>
+MODELO 2 - Viviendas Amplias
+</h3>
+</div>
+<!-- Modelo 2 - 35m2 Mejorado -->
 <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
-<div class="shine-effect aspect-[1.41] overflow-hidden">
-<img alt="Modelo H8" class="img-zoom w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6CgnzYM5glB1mLzfm_k019zP0kqGxDxUddTTKtGp7eWF9JUv6a-tVmU3mgzfjATbioiWlgc72kWosyYsdGXmQ0Ickq1vDc_ovkK2KfNiqQ_jolGkwNiz9CMdEkszgqFqrNhwykx7tMwNMEER3M-MmVx4zJxcjGJXo5P6rY27Uk2-gyT1OnPNm4CJRVbO90L9dkQ3QtHnCcvYOBXMc49yzieA2uqU9r31mb33E6x6bamTT8746xrkdSkxavNbmTt6W-g"/>
-</div>
 <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-2">
@@ -738,10 +725,134 @@
 <span class="text-sm font-semibold">3 Dormitorios</span>
 </div>
 </div>
-<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Ver Planos</button>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%202/MODELO%202%20-%2035m2/MODELO%202%20-%2035m2%20MEJORADO/MODELO%202%20-%2035m2%20MEJORADO_page-0001.jpg" data-img2="previews/Modelos/MODELO%202/MODELO%202%20-%2035m2/MODELO%202%20-%2035m2%20MEJORADO/MODELO%202%20-%2035m2%20MEJORADO_page-0002.jpg" data-model="Modelo 2 - 35m2 Mejorado">Ver Planos</button>
+</div>
+</div>
+<!-- Modelo 2 - 35m2 Tradicional -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 2 - 35m2 Tradicional</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Diseño tradicional con excelente relación costo-beneficio para familias jóvenes.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">51.20 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">bed</span>
+<span class="text-sm font-semibold">2 Dormitorios</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%202/MODELO%202%20-%2035m2/MODELO%202%20-%2035m2%20TRADICIONAL/MODELO%202%20-%2035m2%20TRADICIONAL_page-0001.jpg" data-img2="previews/Modelos/MODELO%202/MODELO%202%20-%2035m2/MODELO%202%20-%2035m2%20TRADICIONAL/MODELO%202%20-%2035m2%20TRADICIONAL_page-0002.jpg" data-model="Modelo 2 - 35m2 Tradicional">Ver Planos</button>
+</div>
+</div>
+<!-- Modelo 2 - 40m2 Mejorado -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 2 - 40m2 Mejorado</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Espacios amplios y luminosos con distribución inteligente para familias medianas.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">48.50 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">bathroom</span>
+<span class="text-sm font-semibold">2 Baños</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%202/MODELO%202%20-%2040m2/MODELO%202%20-%2040m2%20MEJORADO/MODELO%202%20-%2040m2%20MEJORADO_page-0001.jpg" data-img2="previews/Modelos/MODELO%202/MODELO%202%20-%2040m2/MODELO%202%20-%2040m2%20MEJORADO/MODELO%202%20-%2040m2%20MEJORADO_page-0002.jpg" data-model="Modelo 2 - 40m2 Mejorado">Ver Planos</button>
+</div>
+</div>
+<!-- Modelo 2 - 40m2 Tradicional -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 2 - 40m2 Tradicional</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Diseño clásico con acabados de primera y opción de ampliación futura.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">52.80 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">layers</span>
+<span class="text-sm font-semibold">Proy. 2do Piso</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%202/MODELO%202%20-%2040m2/MODELO%202%20-%2040m2%20TRADICIONAL/MODELO%202%20-%2040m2%20TRADICIONAL_page-0001.jpg" data-img2="previews/Modelos/MODELO%202/MODELO%202%20-%2040m2/MODELO%202%20-%2040m2%20TRADICIONAL/MODELO%202%20-%2040m2%20TRADICIONAL_page-0002.jpg" data-model="Modelo 2 - 40m2 Tradicional">Ver Planos</button>
+</div>
+</div>
+<!-- Modelo 2 - 60m2 Mejorado -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 2 - 60m2 Mejorado</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Vivienda premium con acabados de lujo y espacios generosos para toda la familia.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">58.90 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">kitchen</span>
+<span class="text-sm font-semibold">Cocina Kitchenette</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%202/MODELO%202%20-%2060m2/MODELO%202%20-%2060m2%20MEJORADO/MODELO%202%20-%2060m2%20MEJORADO_page-0001.jpg" data-img2="previews/Modelos/MODELO%202/MODELO%202%20-%2060m2/MODELO%202%20-%2060m2%20MEJORADO/MODELO%202%20-%2060m2%20MEJORADO_page-0002.jpg" data-model="Modelo 2 - 60m2 Mejorado">Ver Planos</button>
+</div>
+</div>
+<!-- Modelo 2 - 60m2 Tradicional -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Modelo 2 - 60m2 Tradicional</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Diseño tradicional robusto, máxima durabilidad y bajo mantenimiento.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">55.40 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">construction</span>
+<span class="text-sm font-semibold">Construcción Rápida</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%202/MODELO%202%20-%2060m2/MODELO%202%20-%2060m2%20TRADICIONAL/MODELO%202%20-%2060m2%20TRADICIONAL_page-0001.jpg" data-img2="previews/Modelos/MODELO%202/MODELO%202%20-%2060m2/MODELO%202%20-%2060m2%20TRADICIONAL/MODELO%202%20-%2060m2%20TRADICIONAL_page-0002.jpg" data-model="Modelo 2 - 60m2 Tradicional">Ver Planos</button>
+</div>
+</div>
+<!-- Modelo 2 - 80m2 Mejorado -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm card-glow border border-outline-variant/20 flex flex-col">
+<div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Modelo 2 - 80m2 Mejorado</h3>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-2 py-1 rounded text-[10px] font-bold uppercase">Premium</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2">Nuestra vivienda más completa: 3 dormitorios, 2 baños y amplias áreas sociales.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">square_foot</span>
+<span class="text-sm font-semibold">78.50 m²</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">group</span>
+<span class="text-sm font-semibold">3 Dormitorios</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all ver-planos-btn" data-img1="previews/Modelos/MODELO%202/MODELO%202%20-%2080m2/MODELO%202%20-%2080m2%20MEJORADO/MODELO%202%20-%2080m2%20MEJORADO_page-0001.jpg" data-img2="previews/Modelos/MODELO%202/MODELO%202%20-%2080m2/MODELO%202%20-%2080m2%20MEJORADO/MODELO%202%20-%2080m2%20MEJORADO_page-0002.jpg" data-model="Modelo 2 - 80m2 Mejorado">Ver Planos</button>
 </div>
 </div>
 </div>
+
 </section>
 <!-- Technical Specification Info -->
 <section class="bg-primary text-on-primary py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden relative">
@@ -1280,6 +1391,65 @@
 </div>
 </div>
 </footer>
+<!-- Modal Planos - Galería de Modelos - Carousel Thin -->
+<div id="planos-modal" class="fixed inset-0 z-[100] hidden">
+    <div id="modal-backdrop" class="absolute inset-0 bg-black/75 backdrop-blur-sm"></div>
+    <div class="relative z-10 flex min-h-full items-center justify-center p-2 md:p-4">
+        <div id="modal-window" class="bg-white rounded-xl shadow-2xl w-auto max-w-[96vw] max-h-[96vh] flex flex-col overflow-hidden border border-white/20 relative select-none" style="touch-action: none;">
+                        <div id="modal-header" class="flex items-center justify-between px-3 py-2.5 border-b border-outline-variant/15 bg-white cursor-move select-none">
+                <h3 id="modal-title" class="font-headline-md text-[16px] md:text-headline-md text-primary truncate pr-2"></h3>
+                <div class="flex items-center gap-1 flex-shrink-0">
+                    <div class="hidden md:flex items-center gap-1 mr-1 bg-surface-container rounded-full p-1">
+                        <button id="zoom-out" class="w-7 h-7 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-surface-container-high transition-colors" aria-label="Alejar"><span class="material-symbols-outlined text-[18px]">zoom_out</span></button>
+                        <button id="zoom-in" class="w-7 h-7 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-surface-container-high transition-colors" aria-label="Acercar"><span class="material-symbols-outlined text-[18px]">zoom_in</span></button>
+                    </div>
+                    <button id="open-original" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors md:mr-1" aria-label="Abrir original"><span class="material-symbols-outlined text-[18px]">open_in_new</span></button>
+                    <button id="modal-maximize" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors" aria-label="Maximizar"><span class="material-symbols-outlined text-[18px]">open_with</span></button>
+                    <button id="modal-close" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-error-container hover:text-on-error-container transition-colors" aria-label="Cerrar">
+                        <span class="material-symbols-outlined text-[18px]">close</span>
+                    </button>
+                </div>
+            </div>
+            <div class="w-auto overflow-visible bg-[#f8f9fa] flex flex-col relative">
+                <div id="zoom-container" class="relative flex items-center justify-center overflow-hidden select-none w-auto bg-white">
+                    <img id="carousel-image" src="" alt="" class="max-w-[90vw] md:max-w-[88vw] max-h-[76vh] md:max-h-[78vh] w-auto h-auto object-contain block transition-transform duration-200 select-none" draggable="false">
+                  
+                  
+                    <div id="carousel-counter" class="absolute bottom-2 right-2 bg-black/70 text-white text-[11px] px-2 py-0.5 rounded-full font-medium">1 / 2</div>
+                    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 text-white text-[10px] px-2 py-1 rounded-full hidden md:flex items-center gap-1">Click para zoom • Arrastra • Rueda</div>
+                    <div class="md:hidden absolute top-2 left-1/2 -translate-x-1/2 flex gap-1 bg-white/90 backdrop-blur rounded-full p-1 shadow">
+                        <button class="w-7 h-7 rounded-full bg-white shadow-sm flex items-center justify-center" onclick="document.getElementById('zoom-out').click()"><span class="material-symbols-outlined text-[16px]">zoom_out</span></button>
+                        <button class="w-7 h-7 rounded-full bg-white shadow-sm flex items-center justify-center" onclick="document.getElementById('zoom-in').click()"><span class="material-symbols-outlined text-[16px]">zoom_in</span></button>
+                    </div>
+                </div>
+       <button id="carousel-prev" class="absolute left-0 -translate-x-1/2 md:-translate-x-5 top-1/2 -translate-y-1/2 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-white hover:scale-110 transition-all border border-black/10 z-20 backdrop-blur" aria-label="Anterior">
+                        <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+                    </button>
+                <button id="carousel-next" class="absolute right-0 translate-x-1/2 md:translate-x-5 top-1/2 -translate-y-1/2 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-white hover:scale-110 transition-all border border-black/10 z-20 backdrop-blur" aria-label="Siguiente">
+                        <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+                    </button>
+                         <div class="flex justify-center items-center gap-1.5 py-2 bg-white border-t border-outline-variant/15">
+                    <button class="carousel-dot w-2 h-2 rounded-full bg-primary transition-colors" data-idx="0" aria-label="Imagen 1"></button>
+                    <button class="carousel-dot w-2 h-2 rounded-full bg-outline-variant transition-colors" data-idx="1" aria-label="Imagen 2"></button>
+                </div>
+            </div>
+            <div class="px-3 py-2 border-t border-outline-variant/15 bg-white flex justify-end">
+                <button id="modal-close-btn" class="px-4 py-1.5 text-sm border border-outline-variant text-primary rounded-lg font-medium hover:bg-surface-container transition-colors">Cerrar</button>
+            </div>
+        
+            <!-- Resize handles Windows-like -->
+            <div class="resize-handle absolute -top-1 left-0 right-0 h-2 cursor-n-resize" data-dir="n"></div>
+            <div class="resize-handle absolute -bottom-1 left-0 right-0 h-2 cursor-s-resize" data-dir="s"></div>
+            <div class="resize-handle absolute top-0 -left-1 bottom-0 w-2 cursor-w-resize" data-dir="w"></div>
+            <div class="resize-handle absolute top-0 -right-1 bottom-0 w-2 cursor-e-resize" data-dir="e"></div>
+            <div class="resize-handle absolute -top-1 -left-1 w-3 h-3 cursor-nw-resize" data-dir="nw"></div>
+            <div class="resize-handle absolute -top-1 -right-1 w-3 h-3 cursor-ne-resize" data-dir="ne"></div>
+            <div class="resize-handle absolute -bottom-1 -left-1 w-3 h-3 cursor-sw-resize" data-dir="sw"></div>
+            <div class="resize-handle absolute -bottom-1 -right-1 w-3 h-3 cursor-se-resize" data-dir="se"></div>
+</div>
+    </div>
+</div>
+
 <script src="js/main.js"></script>
 <script>
 function navigateTo(page) {
@@ -1314,5 +1484,233 @@ document.getElementById('mobile-menu-btn').addEventListener('click', function() 
     var mobileNav = document.getElementById('mobile-nav');
     mobileNav.classList.toggle('hidden');
 });
+
+// === Modal Planos - Carousel + Zoom no toca HREF - zoom persiste ===
+(function(){
+    const modal = document.getElementById('planos-modal');
+    const backdrop = document.getElementById('modal-backdrop');
+    const btnClose = document.getElementById('modal-close');
+    const btnClose2 = document.getElementById('modal-close-btn');
+    const titleEl = document.getElementById('modal-title');
+    const imgEl = document.getElementById('carousel-image');
+    const counterEl = document.getElementById('carousel-counter');
+    const dots = document.querySelectorAll('.carousel-dot');
+    if(!modal || !imgEl) return;
+    let images = [];
+    let current = 0;
+    let modelName = '';
+    let scale = 1;
+    let posX = 0, posY = 0;
+    let isDragging = false;
+    let startX=0, startY=0;
+    function applyTransform(){
+        imgEl.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+        imgEl.style.cursor = scale>1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in';
+    }
+    function resetZoom(){ scale=1; posX=0; posY=0; applyTransform(); }
+    function updateCarousel(keepZoom=false){
+        if(images.length===0) return;
+        imgEl.src = images[current];
+        imgEl.alt = modelName + ' vista ' + (current+1);
+        if(!keepZoom) { resetZoom(); } else { applyTransform(); }
+        if(counterEl) counterEl.textContent = (current+1) + ' / ' + images.length;
+        dots.forEach((d,i)=>{
+            d.classList.toggle('bg-primary', i===current);
+            d.classList.toggle('bg-outline-variant', i!==current);
+        });
+    }
+    function openModal(img1, img2, model){
+        images = [img1, img2];
+        modelName = model;
+        current = 0;
+        scale=1; posX=0; posY=0;
+        if(titleEl) titleEl.textContent = model;
+        updateCarousel(false);
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+        modal.classList.add('hidden');
+        images = [];
+        resetZoom();
+        document.body.style.overflow = '';
+    }
+    function next(){ current = (current+1)%images.length; updateCarousel(true); }
+    function prev(){ current = (current-1+images.length)%images.length; updateCarousel(true); }
+    function zoomIn(){ scale = Math.min(scale*1.35, 4); applyTransform(); }
+    function zoomOut(){ scale = Math.max(scale/1.35, 1); if(scale===1){posX=0;posY=0;} applyTransform(); }
+    document.addEventListener('click', function(e){
+        const btn = e.target.closest('.ver-planos-btn');
+        if(btn){
+            e.preventDefault();
+            const i1 = btn.getAttribute('data-img1');
+            const i2 = btn.getAttribute('data-img2');
+            const m = btn.getAttribute('data-model');
+            if(i1 && i2 && m) openModal(i1,i2,m);
+        }
+        if(e.target.closest('#carousel-next')) next();
+        if(e.target.closest('#carousel-prev')) prev();
+        const dot = e.target.closest('.carousel-dot');
+        if(dot && dot.dataset.idx!==undefined){ current = parseInt(dot.dataset.idx,10); updateCarousel(true); }
+    });
+    document.getElementById('zoom-in')?.addEventListener('click', zoomIn);
+    document.getElementById('zoom-out')?.addEventListener('click', zoomOut);
+    document.getElementById('zoom-reset')?.addEventListener('click', resetZoom);
+    document.getElementById('open-original')?.addEventListener('click', ()=>{ if(images[current]) window.open(images[current], '_blank'); });
+    let moved = false;
+    imgEl.addEventListener('click', (e)=>{
+        if(moved) { moved=false; return; }
+        if(scale===1){ scale=2; applyTransform(); } else { resetZoom(); }
+    });
+    imgEl.addEventListener('wheel', (e)=>{
+        e.preventDefault();
+        if(e.deltaY<0) zoomIn(); else zoomOut();
+    }, {passive:false});
+    imgEl.addEventListener('mousedown', (e)=>{
+        moved=false;
+        if(scale===1) return;
+        isDragging=true; startX=e.clientX-posX; startY=e.clientY-posY; imgEl.style.transition='none';
+    });
+    window.addEventListener('mousemove', (e)=>{
+        if(!isDragging) return;
+        moved=true;
+        posX=e.clientX-startX; posY=e.clientY-startY; applyTransform();
+    });
+    window.addEventListener('mouseup', ()=>{
+        if(isDragging){ isDragging=false; imgEl.style.transition='transform 0.2s'; }
+    });
+    let touchX=0;
+    imgEl.addEventListener('touchstart', e=>{ if(scale>1){ isDragging=true; touchX=e.touches[0].clientX-posX; } else { touchX=e.touches[0].clientX; } }, {passive:true});
+    imgEl.addEventListener('touchmove', e=>{
+        if(scale>1 && isDragging){ posX=e.touches[0].clientX-touchX; applyTransform(); }
+    }, {passive:true});
+    imgEl.addEventListener('touchend', e=>{
+        if(scale===1){
+            const dx=e.changedTouches[0].clientX-touchX;
+            if(Math.abs(dx)>50){ if(dx<0) next(); else prev(); }
+        }
+        isDragging=false;
+    });
+    btnClose && btnClose.addEventListener('click', closeModal);
+    btnClose2 && btnClose2.addEventListener('click', closeModal);
+    backdrop && backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e){
+        if(modal.classList.contains('hidden')) return;
+        if(e.key==='Escape') closeModal();
+        if(e.key==='ArrowRight') next();
+        if(e.key==='ArrowLeft') prev();
+        if(e.key==='+'||e.key==='=') zoomIn();
+        if(e.key==='-') zoomOut();
+        if(e.key==='0') resetZoom();
+    });
+})();
+
+// === Ventana redimensionable y arrastrable tipo Windows ===
+(function(){
+    const win = document.getElementById('modal-window');
+    const header = document.getElementById('modal-header');
+    const btnMax = document.getElementById('modal-maximize');
+    if(!win || !header) return;
+    let isMaximized = false;
+    let prevStyle = {};
+    function savePrev(){
+        const r = win.getBoundingClientRect();
+        prevStyle = {width: r.width+'px', height: r.height+'px', left: win.style.left, top: win.style.top, transform: win.style.transform, position: win.style.position};
+    }
+    function toggleMax(){
+        if(!isMaximized){
+            savePrev();
+            win.style.position = 'fixed';
+            win.style.left = '1vw';
+            win.style.top = '1vh';
+            win.style.width = '98vw';
+            win.style.height = '96vh';
+            win.style.maxWidth = 'none';
+            win.style.maxHeight = 'none';
+            win.style.transform = 'none';
+            if(btnMax) btnMax.innerHTML = '<span class="material-symbols-outlined text-[18px]">close_fullscreen</span>';
+            isMaximized = true;
+        } else {
+            win.style.width = prevStyle.width || '';
+            win.style.height = prevStyle.height || '';
+            win.style.left = prevStyle.left || '';
+            win.style.top = prevStyle.top || '';
+            win.style.maxWidth = '96vw';
+            win.style.maxHeight = '96vh';
+            win.style.position = '';
+            win.style.transform = '';
+            if(btnMax) btnMax.innerHTML = '<span class="material-symbols-outlined text-[18px]">open_with</span>';
+            isMaximized = false;
+        }
+    }
+    btnMax && btnMax.addEventListener('click', toggleMax);
+    header.addEventListener('dblclick', toggleMax);
+    // Drag
+    let drag = false, sx, sy, sl, st;
+    header.addEventListener('mousedown', (e)=>{
+        if(e.target.closest('button')) return;
+        if(isMaximized) return;
+        drag = true;
+        sx = e.clientX; sy = e.clientY;
+        const r = win.getBoundingClientRect();
+        sl = r.left; st = r.top;
+        win.style.position = 'fixed';
+        win.style.left = sl+'px';
+        win.style.top = st+'px';
+        win.style.transform = 'none';
+        win.style.transition = 'none';
+        document.body.style.userSelect = 'none';
+    });
+    window.addEventListener('mousemove', (e)=>{
+        if(!drag) return;
+        const dx = e.clientX - sx, dy = e.clientY - sy;
+        win.style.left = (sl+dx)+'px';
+        win.style.top = Math.max(0, st+dy)+'px';
+    });
+    window.addEventListener('mouseup', ()=>{
+        if(drag){ drag=false; win.style.transition=''; document.body.style.userSelect=''; }
+    });
+    // Resize
+    let resizing=false, dir='', rsx, rsy, rw, rh, rl, rt;
+    document.querySelectorAll('.resize-handle').forEach(h=>{
+        h.addEventListener('mousedown', (e)=>{
+            e.preventDefault(); e.stopPropagation();
+            if(isMaximized) return;
+            resizing=true; dir=h.dataset.dir;
+            rsx=e.clientX; rsy=e.clientY;
+            const r=win.getBoundingClientRect();
+            rw=r.width; rh=r.height; rl=r.left; rt=r.top;
+            win.style.position='fixed';
+            win.style.transition='none';
+            document.body.style.userSelect='none';
+        });
+    });
+    window.addEventListener('mousemove', (e)=>{
+        if(!resizing) return;
+        const dx=e.clientX-rsx, dy=e.clientY-rsy;
+        let nw=rw, nh=rh, nl=rl, nt=rt;
+        if(dir.includes('e')) nw=Math.max(380, rw+dx);
+        if(dir.includes('s')) nh=Math.max(280, rh+dy);
+        if(dir.includes('w')){ nw=Math.max(380, rw-dx); nl=rl+dx; }
+        if(dir.includes('n')){ nh=Math.max(280, rh-dy); nt=rt+dy; }
+        win.style.width=nw+'px'; win.style.height=nh+'px';
+        win.style.left=nl+'px'; win.style.top=Math.max(0,nt)+'px';
+        win.style.maxWidth='none'; win.style.maxHeight='none';
+    });
+    window.addEventListener('mouseup', ()=>{
+        if(resizing){ resizing=false; win.style.transition=''; document.body.style.userSelect=''; }
+    });
+})();
+
+
+
+
+
+
+
+
 </script>
+
+
+
 </body></html>
