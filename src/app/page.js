@@ -68,6 +68,12 @@ const SERVICES = [
   },
 ];
 
+const VIDEOS = [
+  { src: "/videos/modelo-1-40m2.mp4", title: "Modelo 1", sub: "40 m²" },
+  { src: "/videos/modelo-2-35m2.mp4", title: "Modelo 2", sub: "35 m²" },
+  { src: "/videos/modelo-2-60m2.mp4", title: "Modelo 3", sub: "60 m²" },
+];
+
 const REQUIREMENTS = [
   {
     title: "Título de Propiedad",
@@ -299,6 +305,55 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-primary/10" />
               </div>
             </div>
+          </div>
+        </div>
+      </Reveal>
+
+      {/* Recorridos Virtuales */}
+      <Reveal className="py-section-gap bg-surface-container-low">
+        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-secondary font-label-bold uppercase tracking-widest">
+              Recorridos Virtuales
+            </span>
+            <h2 className="font-headline-lg text-headline-lg text-primary mt-2">
+              Recorre en 3D nuestros modelos de vivienda
+            </h2>
+            <p className="text-on-surface-variant max-w-2xl mx-auto mt-4 font-body-md">
+              Explora el interior de cada prototipo y visualiza la distribución
+              de ambientes antes de tomar tu decisión.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            {VIDEOS.map((v) => (
+              <div
+                key={v.src}
+                className="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/30 flex flex-col"
+              >
+                <div className="relative bg-black aspect-video">
+                  <video
+                    className="w-full h-full object-cover"
+                    src={v.src}
+                    controls
+                    playsInline
+                    preload="metadata"
+                  />
+                </div>
+                <div className="p-6 flex items-center justify-between">
+                  <div>
+                    <h3 className="font-headline-md text-headline-md text-primary">
+                      {v.title}
+                    </h3>
+                    <p className="text-on-surface-variant font-label-sm">
+                      {v.sub}
+                    </p>
+                  </div>
+                  <span className="material-symbols-outlined text-primary">
+                    ondemand_video
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </Reveal>
