@@ -37,4 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 ## Link del Servidor
-htttps://consorcio-constructor.vercel.app
+https://consorcio-constructor.vercel.app
